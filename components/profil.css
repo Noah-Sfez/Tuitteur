@@ -1,0 +1,35 @@
+.banniere-profil{
+    width: 523px;
+    height: 200px;
+}
+.head-profil{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid grey;
+    border-top: white;
+    min-height: 550px;
+    max-height: auto;
+    margin-left: 2%;
+}
+.head-img{
+    border-radius: 50%;
+    border: 5px solid white;
+    width: 120px;
+}
+.head-name{
+    font-size: xx-large;
+    margin: 0;
+}
+.head{
+    position: relative;
+    bottom: 60px;
+    left: 40px;
+    z-index: 0;
+}
+.head-pseudo{
+    font-size: x-large;
+}
+.profil-tweet{
+    display: flex;
+    flex-direction: column;
+}
