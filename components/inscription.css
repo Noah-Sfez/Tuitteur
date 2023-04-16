@@ -6,7 +6,7 @@
     margin-top: 2%;
 }
 .formulaire{
-    background-color: rgb(0, 172, 238);
+    background-color: var(--couleur-tweeter);
     padding: 2%;
     border-radius: 20px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
@@ -41,7 +41,7 @@
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
 .recap{
-    background-color: rgb(0, 172, 238);
+    background-color: var(--couleur-tweeter);
     color: white;
     padding: 3%;
     border-radius: 20px;
@@ -50,7 +50,7 @@
     font-size: x-large;
 }
 .valid{
-    color: rgb(0, 172, 238);
+    color: var(--couleur-tweeter);
     font-size: xx-large;
     background-color: white;
     padding: 1%;
@@ -66,3 +66,8 @@
 }
 
 
+.inscrip-back{
+    background-color: var(--couleur-tweeter);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}

@@ -2,6 +2,10 @@
 <html>
 <head>
     <title>Titre de la page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body class="inscrip">
@@ -41,7 +45,7 @@ if($_POST){
 }else{
 
 ?>
-<div class="formulaire">
+<!--<div class="formulaire">
     <h1 class="creation">Créer votre compte</h1>
     <form action="" method="post" class="formu">
         <input type="text" name="prenom" placeholder="Votre prénom" required>
@@ -59,10 +63,52 @@ if($_POST){
         <input type="submit" value="S'inscrire" class="submit" required>
     </form>
     <p class="page-connect">J'ai déjà un compte. <a href="connexion.php">Me connecter</a></p>
+</div>-->
+
+
+<div class="inscrip-back">
+    <div class="p-3 rounded-4">
+        <h1 class="text-white">Créer votre compte</h1>
+        <form method="post">
+        <div class="mb-3 form-floating">
+            <input type="text" name="prenom" id="floatingInput" class="form-control" required>
+            <label class="form-label" for="floatingInput">Prénom :</label>
+        </div>
+        <div class="mb-3 form-floating">
+            <input type="text" name="nom" id="floatingInput" class="form-control"required>
+            <label class="form-label" for="floatingInput">Nom :</label>
+        </div>
+        <div class="mb-3 form-floating">
+            <input type="text" name="pseudo" id="floatingInput" class="form-control" required>
+            <label class="form-label" for="floatingInput">Pseudo :</label>
+        </div>
+        <div class="mb-3 d-flex jutify-content-center flex-column align-items-center">
+            <h3 class="text-white">Votre date de naissance :</h3>
+            <input name="birth" type="date" class="col-6" required>
+        </div>
+        <div class="mb-3 form-floating">
+            <input type="email" class="form-control"  name="mail" id="floatingInput" aria-describedby="emailHelp" required>
+            <label for="exampleInputEmail1" for="floatingInput" class="form-label">Adresse e-mail :</label>
+        </div>
+        <div class="mb-3 form-floating">
+            <input type="password" class="form-control" name="mdp" id="floatingInput" required>
+            <label for="exampleInputPassword1" for="floatingInput" class="form-label">Password :</label>
+        </div>
+        <div class="mb-3 d-flex justify-content-center flex-column align-items-center" style="--bs-btn-padding-y: .105rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
+        <button type="submit" class="btn text-bg-light p-3 d-flex col-6 fs-5 justify-content-center ">S'inscrire</button>
+        <div class="d-flex text-white mt-3">
+            <p>J'ai déjà un compte.</p>
+            <a href="connexion.php" class="text-white ms-3">Se connecter</a>
+        </div>
+        </div>
+        </form>
+    </div>
 </div>
+
 <?php
 }
 ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -25,3 +25,12 @@
     margin-left: 2%;
     color: rgb(0, 0, 0);
 }
+
+@media all and (max-device-width:480px){
+    .profil{
+        display: none;
+    }
+    .header{
+        margin-left: 10%;
+    }
+  }

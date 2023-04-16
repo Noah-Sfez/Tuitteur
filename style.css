@@ -23,8 +23,32 @@ body{
   background-color: #ffffff;
   display: flex;
 }
-
 textarea{
   border-color: #ffffff;
   resize: none;
+}
+
+.flou{
+  filter: blur(4px);
+}
+h1, h2, h3, p, nav, a{
+  font-family: 'Prompt', sans-serif;
+}
+
+::placeholder{
+  font-family: 'Prompt', sans-serif;
+}
+.hidden {
+  display: none;
+}
+:root{
+  --couleur-tweeter: rgb(0, 172, 238);
+  --couleur-sport: rgba(255, 0, 0, 0.8);
+  --couleur-politique: rgba(128, 128, 128, 0.8);
+  --couleur-musique: rgba(138, 43, 226, 0.8);
+  --couleur-divertissement: rgba(196, 196, 89, 0.8);
+  --couleur-cinema: rgba(0, 0, 0, 0.8);
+  --couleur-voyage: rgba(132, 190, 43, 0.8);
+  --couleur-cuisine: rgba(38, 0, 255, 0.8);
+  --couleur-art: rgba(255, 192, 203, 0.9);
 }

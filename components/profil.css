@@ -7,7 +7,8 @@
     flex-direction: column;
     border: 2px solid grey;
     border-top: white;
-    min-height: 550px;
+    border-bottom: white;
+    min-height: 1340px;
     max-height: auto;
     margin-left: 2%;
 }

@@ -11,9 +11,9 @@
     margin-top: 4%;
     margin-left: 2%;
     font-size: large;
-    background-color: rgb(0, 172, 238);
+    background-color: var(--couleur-tweeter);
     color: white;
-    border-color: rgb(0, 172, 238);
+    border-color: var(--couleur-tweeter);
     border-radius: 20px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
@@ -52,3 +52,10 @@
     padding-bottom: 4%;
     margin-top: 8%;
 }
+
+@media all and (max-device-width:480px){
+    .espace_recherche{
+        display: none;
+    }
+}
+  

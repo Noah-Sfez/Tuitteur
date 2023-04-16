@@ -25,14 +25,17 @@
 .pseudo_tweet{
   font-weight: bold;
   font-size: x-large;
+  font-family: 'Prompt', sans-serif;
 }
 .message_tweet{
   font-weight: bold;
+  font-family: 'Prompt', sans-serif;
 }
 .tweet_content{
   width: 500px;
   gap: 30px;
   display: flex;
+  flex-direction: column;
   border: 1px solid rgb(199, 199, 199);
   padding: 2%;
   margin-right: 22px;
@@ -45,36 +48,63 @@
   display: flex;
   flex-direction: column-reverse;
   align-items: flex-end;
+  justify-content: end;
   display: block;
 }
 .poubelle{
   width: 25px;
   margin-left: 80%;
 }
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
 .poster{
-  background-color: rgb(0, 172, 238);
+  background-color: var(--couleur-tweeter);
   font-size: large;
   color: white;
+  position: relative;
+  z-index: 1;
   padding: 1%;
   border-radius: 20px;
   border-color: rgb(0, 172, 238);
   margin-left: 80%;
   margin-bottom: 2%;
+  cursor: pointer;
+  animation: bounce 1s ease-out infinite;
+  
 }
 .type_tweet{
   margin-top: 1%;
   font-size: large;
-  background-color: rgb(0, 172, 238);
+  background-color: var(--couleur-tweeter);
   color: white;
   border-color: rgb(0, 172, 238);
   font-weight: bold;
   border-radius: 20px;
   margin-left: 5%;
 }
+.heure_type{
+  width: 25%;
+  min-width: 23%
+}
+.input-media{
+  margin-left: 5%;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.input-media:hover{
+  background-color: rgba(0, 172, 238, 0.2);
+}
 .text_tweet{
   display: flex;
   justify-content: center;
 }
+
 .type_response{
   font-weight: bold;
   background-color: rgba(0, 172, 238, 0.6);
@@ -82,34 +112,88 @@
   padding: 2%;
   border-radius: 20px;
   font-size: large;
+  width: max-content;
 }
 .sport{
-  background-color: rgba(255, 0, 0, 0.8);
+  background-color: var(--couleur-sport);
+  border-color: var(--couleur-sport);
+}
+.sport:hover{
+  background-color: rgba(202, 3, 3, 0.8);
 }
 .politique{
-  background-color: rgba(128, 128, 128, 0.8);
+  background-color: var(--couleur-politique);
+  border-color: var(--couleur-politique);
+}
+.politique:hover{
+  background-color: rgba(89, 88, 88, 0.8);
 }
 .musique{
-  background-color: rgba(138, 43, 226, 0.8);
+  background-color: var(--couleur-musique);
+  border-color: var(--couleur-musique);
+}
+.musique:hover{
+  background-color: rgba(98, 18, 173, 0.8);
 }
 .divertissement{
-  background-color: rgba(196, 196, 89, 0.8);
+  background-color: var(--couleur-divertissement);
+  border-color: var(--couleur-divertissement);
+}
+.divertissement:hover{
+  background-color: rgba(123, 123, 45, 0.8);
 }
 .cinema{
+  background-color: var(--couleur-cinema);
+  border-color: var(--couleur-cinema);
+}
+.cinema:hover{
   background-color: rgba(0, 0, 0, 0.8);
 }
 .voyage{
-  background-color: rgba(132, 190, 43, 0.8);
+  background-color: var(--couleur-voyage);
+  border-color: var(--couleur-voyage);
+}
+.voyage:hover{
+  background-color: rgba(86, 126, 26, 0.8);
 }
 .cuisine{
-  background-color:rgba(38, 0, 255, 0.8);
+  background-color: var(--couleur-cuisine);
+  border-color: var(--couleur-cuisine);
+}
+.cuisine:hover{
+  background-color:rgba(24, 4, 138, 0.8);
 }
 .art{
-  background-color: rgba(255, 192, 203, 0.9);
+  background-color: var(--couleur-art);
+  border-color: var(--couleur-art);
 }
-
-@media screen and (max-width: 768px) {
+.art:hover{
+  background-color: rgba(180, 114, 125, 0.9);
+}
+.image-tweet{
+  width: 60%;
+  margin-left: 25%;
+  border-radius: 5px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+}
+@media all and (max-device-width:480px){
   .center{
-    width: 100%;
+    width: 120%;
+    margin-left: 0;
+  }
+  .pseudo_tweet{
+    font-size: xx-large;
+  }
+  .message_tweet{
+    font-size: x-large;
+  }
+  .type_response{
+    font-size: large;
+  }
+  .poster{
+    font-size: x-large;
+  }
+  .type_tweet{
+    font-size: x-large;
   }
 }

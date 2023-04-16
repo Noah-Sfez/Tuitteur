@@ -2,6 +2,9 @@
 <html>
 <head>
     <title>Profil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -30,10 +33,9 @@
         <?php
         $i = $pdo->query('SELECT * FROM users');
         ?>
-        <h3></h6>
       </div>
       <form action="" method="post">
-        <textarea name="tweet" id="" cols="60" rows="7" class="modal-tweet" placeholder="What's happening ?" required></textarea>
+        <textarea name="tweet" id="" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
         <select name="genre" id="" class="type_tweet" required>
         <option value="">Type</option>
           <option value="Sport" class="sport">Sport</option>
@@ -45,6 +47,10 @@
           <option value="Cuisine" class="cuisine">Cuisine</option>
           <option value="Art" class="art">Art</option>
         </select>
+        <label for="image_tweet" class="custom-file-upload">
+            <img src="./images/input-media.png" alt="Uploader une image" class="input-media">
+        </label>
+        <input type="file" accept="image/png, image/jpeg, image/gif" name="image_tweet" id="image_tweet" style="display:none;">
         <input type="submit" value="Tuitts" class="tuitts-modal">
       </form>
       </div>
@@ -74,31 +80,43 @@
             $result = $pdo->query($rqt);
 
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-              echo '<div class="tweet_content">';
+              echo '<div class="tweet_content ' . $row['type'] .' ">';
               echo '<div class="pseudo_message">';
               echo '<span class="pseudo_tweet">' . $_SESSION['pseudo'] . '</span><br>';
               echo '<span class="message_tweet">' .$row['message'] . '</span><br>';
+              if(isset($row['image_chemin']) && !empty($row['image_chemin'])) {
+                echo '<img src="' . $row['image_chemin'] . '" alt="" class="image-tweet">';
+              }
               echo '</div>';
               echo '<div class="date_supprimer">';
               echo $row['date_heure_message'] . '<br>';
-              echo '<a href="?id_tweet=' . $row['id_tweet'] . '"><img src="./images/poubelle.png" alt="Supprimer" class="poubelle"></a><br><br>';
+              echo '<a href="?id_tweet=' . $row['id_tweet'] . '"><img src="./images/poubelle.png" alt="Supprimer" id="supp" class="poubelle"></a><br><br>';
               echo '<div class="type_response">';
               echo $row['type'];
               echo '</div>';
               echo '</div>';
               echo '</div>';
             }
-          ?>
+            if(isset($_GET['id_tweet'])){
+              $tweet_id = $_GET['id_tweet'];
+              var_dump($tweet_id);
+            }
+          //var_dump($tweet_id);
+        ?>
+        <script>
+          var tweet_id = <?php echo $tweet_id;?>;
+        </script> 
+        <div id="confirm-modal-delete">
+          <div class="confirm-modal-content">
+            <p class="confirm-quest">Voulez-vous vraiment supprimer ce tweet ?</p>
+            <div class="button-modal-delete">
+              <a href="#" id="cancel-modal-tweet">Annuler</a>
+              <?php echo '<a href="delete.php?supprimer='. $tweet_id . '" class="confirm-delete-tweet">Supprimer</a>'; ?>
+            </div>
+          </div>
+        </div>
         </div>
     </div>
-    
-  
-
-
-
-
-
-
     <?php
   $allusers=$pdo->query('SELECT * FROM tweet ORDER BY id_tweet DESC');
   if(isset($_GET['value_recherche']) AND !empty($_GET['value_recherche'])){
@@ -108,8 +126,8 @@
   ?>
   <div class="espace_recherche">
       <form action="" method="get" class="form-recherche" name="fo">
-        <input type="search" class="rech" name="value_recherche">
-        <input type="submit" value="Rechercher" class="rechercher" name="valider">
+        <input type="search" class="rech" name="value_recherche" placeholder="Search">
+        <input type="submit" value="Rechercher" class="rechercher" id="rechercher" name="valider">
       </form>
       <div class="affichage_tweet">
         <?php
@@ -132,24 +150,18 @@
     </div>
     <div class="last">
       <a href="inscription.php" class="deconnexion">Déconnexion</a>
-      <form action="" method="post">
-        <input type="submit" value="Sport">
-        <input type="submit" value="Politique">
-        <input type="submit" value="Musique">
-        <input type="submit" value="Divertissement">
-        <input type="submit" value="Cinéma">
-        <input type="submit" value="Voyage">
-        <input type="submit" value="Cuisine">
-        <input type="submit" value="Art">
-      </form>
+      <div class="filter-buttons">
+        <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
+        <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
+        <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
+        <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
+        <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
+        <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
+        <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
+        <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
+      </div>
+        <a href="profil.php" class="reset-filter">Reset filter</a>
     </div>
-
-
-
-
-
-
-
 </main>
 <script src="app.js"></script>
 </body>
