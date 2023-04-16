@@ -16,7 +16,12 @@ session_start();
 ?>
 
 <div class="header">
-    <a href="#" class="nav-button"><img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp"></a>
+    <a href="#" class="nav-button">
+      <div class="click">
+        <p>Click Me</p>
+        <img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp">
+        </div>
+    </a>
     <div class="nav-bar">
         <img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-cache">
         <a href="#" class="nav">Home</a>
@@ -26,22 +31,6 @@ session_start();
         <a href="" class="nav">Settings </a> 
     </div> 
     <button id="myBtn" class="btn-modal">Tueets</button>
-
-
-    <div class="lost">
-      <div class="filter-buttons">
-        <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
-        <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
-        <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
-        <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
-        <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
-        <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
-        <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
-        <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
-      </div>
-        <a href="index.php" class="reset-filter lost">Reset filter</a>
-        <a href="inscription.php" class="deconnexion lost" id="deconnexion">Déconnexion</a>
-    </div>
 
 
     <div id="myModal" class="modal">
@@ -216,6 +205,26 @@ session_start();
       </div>
         <a href="index.php" class="reset-filter">Reset filter</a>
     </div>
+
+    <div class="header">
+    <div class="lost">
+      <div class="filter-buttons">
+        <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
+        <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
+        <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
+        <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
+        <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
+        <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
+        <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
+        <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
+      </div>
+        <a href="index.php" class="reset-filter lost">Reset filter</a>
+        <a href="inscription.php" class="deconnexion lost" id="deconnexion">Déconnexion</a>
+    </div>
+    </div>
+
+
+
     </main>
     <script src="app.js"></script>
 </body>

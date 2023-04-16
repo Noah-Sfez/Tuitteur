@@ -67,12 +67,15 @@
     }
     .lost{
         display: block;
-        margin-top: 40%;
+        left: -314px;
+        bottom: -476px;
+        position: relative;
     }
     .reset-filter .lost{
         margin-top: 10%;
     }
     .lost .deconnexion{
+        display: block;
         margin-top: 5%;
         margin-left: 0;
         margin-right: 20%;
