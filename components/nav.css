@@ -35,9 +35,34 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
-
+.nav-button{
+  display: none;
+}
 
 @media all and (max-device-width:480px){
-
+  .nav-bar{
+    position:relative;
+    right: 350px;
+    z-index: 30;
+    background-color: var(--couleur-tweeter);
+    padding: 10%;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  .nav-bar.active {
+    right: 0;
+  }
+  .nav-button{
+    display: block;
+  }
+  .nav-bar a{
+    color: white;
+  }
+  .logo-cache{
+    display: none;
+  }
+  .logo-resp{
+    margin-top: 40%;
+  }
 }
 

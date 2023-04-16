@@ -14,6 +14,9 @@
     border-radius: 10px;
     cursor: pointer;
 }
+.lost{
+    display: none;
+}
 .deconnexion{
     font-size: x-large;
     background-color: var(--couleur-tweeter);
@@ -58,6 +61,21 @@
         font-size: x-large;
         padding: 5%;
         width: 100%;
+    }
+    .last{
+        display: none;
+    }
+    .lost{
+        display: block;
+        margin-top: 40%;
+    }
+    .reset-filter .lost{
+        margin-top: 10%;
+    }
+    .lost .deconnexion{
+        margin-top: 5%;
+        margin-left: 0;
+        margin-right: 20%;
     }
   }
 

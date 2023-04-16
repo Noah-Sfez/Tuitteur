@@ -157,7 +157,12 @@ var modal = document.getElementById("myModal");
 
 var span = document.getElementsByClassName("close")[0];
 
+const navButton = document.querySelector('.nav-button');
+const navBar = document.querySelector('.nav-bar');
 
+navButton.addEventListener('click', function(){
+  navBar.classList.toggle('active');
+})
 
 btn.onclick = function() {
   modal.style.display = "block";
@@ -177,19 +182,6 @@ window.onclick = function(event) {
   }
 }
 
-
-const supprimerBtn = document.getElementById('supp');
-const modalDelete = document.getElementById('confirm-modal-delete');
-const cancelDeleteBtn = document.getElementById('cancel-modal-tweet');
-
-supprimerBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  modalDelete.style.display = "block";
-});
-
-cancelDeleteBtn.addEventListener('click', () => {
-  modalDelete.style.display = "none";
-});
 var confirmModalDelete = document.getElementById("confirm-modal-delete");
 var confirmDeleteTweet = document.getElementById("cancel-modal-tweet");
 
@@ -201,6 +193,4 @@ if (tweet_id) {
 confirmDeleteTweet.onclick = function(){
   confirmModalDelete.style.display = "none";
 }
-
-
 

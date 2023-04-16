@@ -34,3 +34,16 @@
     display: flex;
     flex-direction: column;
 }
+
+@media all and (max-device-width:480px){
+    .head-profil{
+        border-right: white;
+        width: 661px;
+    }
+    .respo-content{
+        width: 100%;
+    }
+    .banniere-profil{
+        width: 700px;
+    }
+  }

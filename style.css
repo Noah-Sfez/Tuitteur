@@ -28,6 +28,7 @@ textarea{
   resize: none;
 }
 
+
 .flou{
   filter: blur(4px);
 }
@@ -52,3 +53,6 @@ h1, h2, h3, p, nav, a{
   --couleur-cuisine: rgba(38, 0, 255, 0.8);
   --couleur-art: rgba(255, 192, 203, 0.9);
 }
+
+
+
