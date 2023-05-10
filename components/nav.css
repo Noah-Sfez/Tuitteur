@@ -1,12 +1,14 @@
 .nav-bar{
     display: flex;
     flex-direction: column;
-    color: rgb(255, 255, 255);
     font-size: x-large;
-    margin-left: 8%;
-    margin-top: 8%;
+    
     gap: 80%;
     width: 140px;
+    background-color: rgb(221, 231, 199);
+    padding: 10%;
+    border-radius: 20px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
 .nav{
     color: rgb(0, 0, 0);
@@ -16,7 +18,7 @@
     transition: 0.5s;
 }
 .nav:hover{
-    background-color: #dddddd;
+    background-color: rgb( 119, 191, 163);
     padding: 10px;
     border-radius: 20px;
 }
@@ -89,4 +91,3 @@
     }
   }
 }
-

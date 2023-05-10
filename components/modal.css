@@ -1,85 +1,88 @@
-
 .btn-modal{
-  background-color: var(--couleur-tweeter);
-  color: white;
-  width: 300px;
-  height: 60px;
-  border-radius: 40px;
-  border-color: var(--couleur-tweeter);
-  margin-top: 10%;
-  margin-left: 2%;
-  font-size: x-large;
-  font-weight: bold; 
-  transition: 0.5s;
-}
-.btn-modal:hover{
-    background-color: rgb(6, 138, 190);
-}
-
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 200; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4); 
-  }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-  }
-  .modal-tweet{
-    border-color: white;
-    margin-top: 2%;
-  }
-  .img-profil-modal{
-    width: 60px;
-    border-radius: 50%;
-    margin-top: 2%;
-    object-fit: contain;
-  }
-  .prof-modal{
-    display: flex;
-    margin-right: 70%;
-  }
-  .tuitts-modal{
-    background-color: var(--couleur-tweeter);
-    border-color: var(--couleur-tweeter);
-    font-size: x-large;
-    color: white;
-    border-radius: 20px;
-    margin-left: 80%;
-    margin-top: 2%;
-  }
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    margin-right: 95%;
-  }
-  
-  .close:hover,
-  .close:focus {
+    background-color: rgb( 237, 238, 201);
     color: black;
-    text-decoration: none;
-    cursor: pointer;
+    width: 300px;
+    height: 60px;
+    border-radius: 40px;
+    border-color: rgb( 237, 238, 201);
+    margin-top: 10%;
+    margin-left: 2%;
+    font-size: x-large;
+    font-weight: bold; 
+    transition: 0.5s;
+  }
+  .btn-modal:hover{
+      background-color: rgb( 119, 191, 163);
+      border-color: rgb( 119, 191, 163);
   }
   
-.modal-connect{
+  .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 200; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4); 
+    }
+    
+    .modal-content {
+      background-color: rgb( 237, 238, 201);
+      margin: 15% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      width: 30%; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+    }
+    .modal-tweet{
+      border-color: white;
+      margin-top: 2%;
+      border-radius: 10px;
+      margin-left: 20px;
+    }
+    .img-profil-modal{
+      width: 60px;
+      border-radius: 50%;
+      margin-top: 2%;
+      object-fit: contain;
+    }
+    .prof-modal{
+      display: flex;
+      margin-right: 70%;
+    }
+    .tuitts-modal{
+      background-color: rgb( 119, 191, 163);
+      border-color: rgb( 119, 191, 163);
+      font-size: x-large;
+      color: white;
+      border-radius: 20px;
+      margin-left: 80%;
+      margin-top: 2%;
+    }
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      margin-right: 95%;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+  .modal-connect{
+    opacity: 0;
     position: fixed; 
     z-index: 200; 
     left: 0;
@@ -90,9 +93,68 @@
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(4px);
-}
-.modal-content-connect{
-  background-color: #fefefe;
+    transition: all 0.5s ease-in-out;
+  }
+  .modal-connect.scroll{
+    opacity: 1;
+  }
+  .modal-content-connect{
+    background-color: #EDEEC9;
+      margin: 15% auto; 
+      padding: 30px;
+      border: 1px solid #888;
+      width: 30%; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+  }
+  .button-modal-connect{
+    margin-top: 5%;
+    width: 90%;
+  }
+  .inscrip-modal-connect{
+    background-color: rgb( 119, 191, 163);
+    color: white;
+    font-size: large;
+    margin-right: 10%;
+    margin-left: 24%;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 20px;
+  }
+  .inscrip-modal-connect:hover{
+    background-color: rgb(46, 155, 113);
+  }
+  .connex-modal-connect{
+    background-color: rgb( 119, 191, 163);
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 2%;
+    border-radius: 20px;
+  }
+  .connex-modal-connect:hover{
+    background-color: rgb(46, 155, 113);
+  }
+  
+  #confirm-modal-delete{
+    display: none;
+    position: fixed; 
+    z-index: 200; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+  }
+  
+  .confirm-modal-content{
+    background-color: #fefefe;
     margin: 15% auto; 
     padding: 30px;
     border: 1px solid #888;
@@ -102,101 +164,46 @@
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-}
-.button-modal-connect{
-  margin-top: 5%;
-  width: 90%;
-}
-.inscrip-modal-connect{
-  background-color: var(--couleur-tweeter);
-  color: white;
-  font-size: large;
-  margin-right: 10%;
-  margin-left: 24%;
-  font-weight: bold;
-  padding: 2%;
-  border-radius: 20px;
-}
-.inscrip-modal-connect:hover{
-  background-color: rgb(6, 138, 190);
-}
-.connex-modal-connect{
-  background-color: var(--couleur-tweeter);
-  color: white;
-  font-size: large;
-  font-weight: bold;
-  padding: 2%;
-  border-radius: 20px;
-}
-.connex-modal-connect:hover{
-  background-color: rgb(6, 138, 190);
-}
-
-#confirm-modal-delete{
-  display: none;
-  position: fixed; 
-  z-index: 200; 
-  left: 0;
-  top: 0;
-  width: 100%; 
-  height: 100%; 
-  overflow: auto; 
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(4px);
-}
-
-.confirm-modal-content{
-  background-color: #fefefe;
-  margin: 15% auto; 
-  padding: 30px;
-  border: 1px solid #888;
-  width: 30%; 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-}
-.confirm-quest{
-  font-size: x-large;
-  font-weight: bold;
-}
-#cancel-modal-tweet{
-  font-size: x-large;
-  background-color: var(--couleur-tweeter);
-  padding: 3%;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-}
-#cancel-modal-tweet:hover{
-  background-color: rgb(6, 138, 190);
-}
-.button-modal-delete{
-  display: flex;
-  gap: 30px;
-}
-.confirm-delete-tweet{
-  font-size: x-large;
-  background-color: var(--couleur-tweeter);
-  padding: 3%;
-  border-radius: 15px;
-  color: white;
-  font-weight: bold;
-}
-.confirm-delete-tweet:hover{
-  background-color: rgb(6, 138, 190);
-}
-
-
-@media all and (max-device-width:480px){
-  .btn-modal{
-    display: none;
   }
-  .modal-content-connect{
-    width: 50%;
-    height: 15%;
+  .confirm-quest{
+    font-size: x-large;
+    font-weight: bold;
   }
-
-}
+  #cancel-modal-tweet{
+    font-size: x-large;
+    background-color: var(--couleur-tweeter);
+    padding: 3%;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+  }
+  #cancel-modal-tweet:hover{
+    background-color: rgb(6, 138, 190);
+  }
+  .button-modal-delete{
+    display: flex;
+    gap: 30px;
+  }
+  .confirm-delete-tweet{
+    font-size: x-large;
+    background-color: var(--couleur-tweeter);
+    padding: 3%;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+  }
+  .confirm-delete-tweet:hover{
+    background-color: rgb(6, 138, 190);
+  }
+  
+  
+  @media all and (max-device-width:480px){
+    .btn-modal{
+      display: none;
+    }
+    .modal-content-connect{
+      width: 50%;
+      height: 15%;
+    }
+  
+  }

@@ -5,9 +5,6 @@
 .head-profil{
     display: flex;
     flex-direction: column;
-    border: 2px solid grey;
-    border-top: white;
-    border-bottom: white;
     min-height: 1340px;
     max-height: auto;
     margin-left: 2%;
@@ -20,6 +17,10 @@
 .head-name{
     font-size: xx-large;
     margin: 0;
+}
+.bio{
+    background-color: #EDEEC9;
+    border-radius: 30px;
 }
 .head{
     position: relative;

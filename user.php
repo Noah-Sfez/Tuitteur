@@ -12,8 +12,14 @@
         $pdo = new PDO('mysql:host=localhost;dbname=testtwitter','root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
         //var_dump($pdo);
         session_start();
+        if(isset($_GET['profil'])){
+            $profil_id = $_GET['profil'];
+        } 
         $random_user = $pdo->query('SELECT id_users, user_photo, pseudo, prenom, nom FROM users ORDER BY RAND() LIMIT 1')->fetch(PDO::FETCH_ASSOC);
-        $user_id=  $_SESSION['user_id'];
+        $user_query = $pdo->query("SELECT * FROM users WHERE pseudo='$profil_id'");
+        $user = $user_query->fetch(PDO::FETCH_ASSOC);
+        //var_dump($user);
+        //var_dump($profil_id);
     ?>
     <div class="header">
     <a href="#" class="nav-button"><img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp"></a>
@@ -57,7 +63,7 @@
     </div>
     <div class="profil">
       <div class="img-profil">
-        <img src="<?php echo $random_user['user_photo']; ?>" alt="" class="img-profil">
+        <a href="profil.php"><img src="<?php echo $random_user['user_photo']; ?>" alt="" class="img-profil"></a>
       </div>
       <div class="utilisateur">
         <p>@<?php  echo $_SESSION['pseudo']; ?></p>
@@ -72,19 +78,19 @@
         <img src="<?php echo $random_user['user_photo']; ?>" alt="" class="banniere-profil">
         <div class="head">
             <img src="<?php echo $random_user['user_photo']; ?>" alt="" class="head-img">
-            <h3 class="head-name"><?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']; ?></h3>
-            <p class="head-pseudo">@<?php echo $_SESSION['pseudo']; ?></p>
+            <h3 class="head-name"><?php echo $user['prenom'] . ' ' . $user['nom']; ?></h3>
+            <p class="head-pseudo">@<?php echo $user['pseudo']; ?></p>
         </div>
       </div>
         <div class="profil-tweet">
           <?php
-            $rqt= "SELECT * FROM tweet WHERE id_users=$user_id ORDER BY date_heure_message DESC";
+            $rqt= "SELECT * FROM tweet WHERE id_users='" . $user['id_users'] . "' ORDER BY date_heure_message DESC";
             $result = $pdo->query($rqt);
 
             while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
               echo '<div class="tweet_content ' . $row['type'] .' content-respo">';
               echo '<div class="pseudo_message">';
-              echo '<span class="pseudo_tweet">' . $_SESSION['pseudo'] . '</span><br>';
+              echo '<span class="pseudo_tweet">' . $user['pseudo'] . '</span><br>';
               echo '<span class="message_tweet">' .$row['message'] . '</span><br>';
               if(isset($row['image_chemin']) && !empty($row['image_chemin'])) {
                 echo '<img src="' . $row['image_chemin'] . '" alt="" class="image-tweet">';
@@ -92,18 +98,12 @@
               echo '</div>';
               echo '<div class="date_supprimer">';
               echo $row['date_heure_message'] . '<br>';
-              echo '<a href="?id_tweet=' . $row['id_tweet'] . '"><img src="./images/poubelle.png" alt="Supprimer" id="supp" class="poubelle"></a><br><br>';
               echo '<div class="type_response">';
               echo $row['type'];
               echo '</div>';
               echo '</div>';
               echo '</div>';
             }
-            if(isset($_GET['id_tweet'])){
-              $tweet_id = $_GET['id_tweet'];
-              //var_dump($tweet_id);
-            }
-          //var_dump($tweet_id);
         ?>
         <script>
           var tweet_id = <?php echo $tweet_id;?>;
@@ -132,7 +132,8 @@
         <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
         <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
       </div>
-        <a href="profil.php" class="reset-filter">Reset filter</a>
+      <?php echo '<a href="user.php?profil=' .$profil_id . '" class="reset-filter">Reset filter</a>'; ?>
+      
     </div>
     <div class="header">
     <div class="lost">

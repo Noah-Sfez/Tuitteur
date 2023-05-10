@@ -1,4 +1,3 @@
-
 const tweets = document.querySelectorAll(".tweet_content");
 const buttons = document.querySelectorAll(".buttons-all");
 console.log(tweets);
@@ -16,7 +15,14 @@ buttons.forEach(Element => {
     })
   })
 })
+const connect = document.querySelector('.modal-connect');
 
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 500){
+    console.log('scroll');
+    connect.classList.add('scroll');
+  }
+});
 
 const sport = document.getElementsByClassName("buttons-all sport");
 const politique = document.getElementsByClassName("buttons-all politique");
@@ -31,126 +37,142 @@ var btn = document.getElementById("myBtn");
 var poster = document.getElementById("poster");
 var rechercher = document.getElementById("rechercher");
 var deconnexion = document.getElementById("deconnexion");
-var typeResponse = document.getElementById("type_resp");
+var typeResponse = document.getElementsByClassName("type_response");
 
 sport[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "red";
-  btn.style.borderColor = "red";
-  typeTweet.style.backgroundColor = "red";
-  typeTweet.style.borderColor = "red";
-  poster.style.backgroundColor = "red";
-  poster.style.borderColor = "red";
-  rechercher.style.backgroundColor = "red";
-  rechercher.style.borderColor = "red";
-  deconnexion.style.backgroundColor = "red";
-  deconnexion.style.borderColor = "red";
-  typeResponse.style.backgroundColor = "red";
-  typeResponse.style.borderColor = "red";
+  btn.style.backgroundColor = "#E38181";
+  btn.style.borderColor = "#E38181";
+  btn.style.color ="white";
+  typeTweet.style.backgroundColor = "#E38181";
+  typeTweet.style.borderColor = "#E38181";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#E38181";
+  poster.style.borderColor = "#E38181";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#E38181";
+  deconnexion.style.borderColor = "#E38181";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#E38181";
+  typeResponse.style.borderColor = "#E38181";
 });
 
 politique[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(128, 128, 128, 0.8)";
-  btn.style.borderColor = "rgba(128, 128, 128, 0.8)";
-  typeTweet.style.backgroundColor = "rgba(128, 128, 128, 0.8)";
-  typeTweet.style.borderColor = "rgba(128, 128, 128, 0.8)";
-  poster.style.backgroundColor = "rgba(128, 128, 128, 0.8)";
-  poster.style.borderColor = "rgba(128, 128, 128, 0.8)";
-  rechercher.style.backgroundColor = "rgba(128, 128, 128, 0.8)";
-  rechercher.style.borderColor = "rgba(128, 128, 128, 0.8)";
-  deconnexion.style.backgroundColor = "rgba(128, 128, 128, 0.8)";
-  deconnexion.style.borderColor = "rgba(128, 128, 128, 0.8)";
-  typeResponse.style.backgroundColor = "rgba(128, 128, 128, 0.8)";
-  typeResponse.style.borderColor = "rgba(128, 128, 128, 0.8)";
+  btn.style.backgroundColor = "#AC9F9F";
+  btn.style.borderColor = "#AC9F9F";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#AC9F9F";
+  typeTweet.style.borderColor = "#AC9F9F";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#AC9F9F";
+  poster.style.borderColor = "#AC9F9F";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#AC9F9F";
+  deconnexion.style.borderColor = "#AC9F9F";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#AC9F9F";
+  typeResponse.style.borderColor = "#AC9F9F";
 });
 
 musique[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(138, 43, 226, 0.8)";
-  btn.style.borderColor = "rgba(138, 43, 226, 0.8)";
-  typeTweet.style.backgroundColor = "rgba(138, 43, 226, 0.8)";
-  typeTweet.style.borderColor = "rgba(138, 43, 226, 0.8)";
-  poster.style.backgroundColor = "rgba(138, 43, 226, 0.8)";
-  poster.style.borderColor = "rgba(138, 43, 226, 0.8)";
-  rechercher.style.backgroundColor = "rgba(138, 43, 226, 0.8)";
-  rechercher.style.borderColor = "rgba(138, 43, 226, 0.8)";
-  deconnexion.style.backgroundColor = "rgba(138, 43, 226, 0.8)";
-  deconnexion.style.borderColor = "rgba(138, 43, 226, 0.8)";
-  typeResponse.style.backgroundColor = "rgba(138, 43, 226, 0.8)";
-  typeResponse.style.borderColor = "rgba(138, 43, 226, 0.8)";
+  btn.style.backgroundColor = "#BE86B9";
+  btn.style.borderColor = "#BE86B9";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#BE86B9";
+  typeTweet.style.borderColor = "#BE86B9";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#BE86B9";
+  poster.style.borderColor = "#BE86B9";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#BE86B9";
+  deconnexion.style.borderColor = "#BE86B9";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#BE86B9";
+  typeResponse.style.borderColor = "#BE86B9";
 });
 
 divertissement[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(196, 196, 89, 0.8)";
-  btn.style.borderColor = "rgba(196, 196, 89, 0.8)";
-  typeTweet.style.backgroundColor = "rgba(196, 196, 89, 0.8)";
-  typeTweet.style.borderColor = "rgba(196, 196, 89, 0.8)";
-  poster.style.backgroundColor = "rgba(196, 196, 89, 0.8)";
-  poster.style.borderColor = "rgba(196, 196, 89, 0.8)";
-  rechercher.style.backgroundColor = "rgba(196, 196, 89, 0.8)";
-  rechercher.style.borderColor = "rgba(196, 196, 89, 0.8)";
-  deconnexion.style.backgroundColor = "rgba(196, 196, 89, 0.8)";
-  deconnexion.style.borderColor = "rgba(196, 196, 89, 0.8)";
-  typeResponse.style.backgroundColor = "rgba(196, 196, 89, 0.8)";
-  typeResponse.style.borderColor = "rgba(196, 196, 89, 0.8)";
+  btn.style.backgroundColor = "#CFD492";
+  btn.style.borderColor = "#CFD492";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#CFD492";
+  typeTweet.style.borderColor = "#CFD492";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#CFD492";
+  poster.style.borderColor = "#CFD492";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#CFD492";
+  deconnexion.style.borderColor = "#CFD492";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#CFD492";
+  typeResponse.style.borderColor = "#CFD492";
 });
 
 cinema[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  btn.style.borderColor = "rgba(0, 0, 0, 0.8)";
-  typeTweet.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  typeTweet.style.borderColor = "rgba(0, 0, 0, 0.8)";
-  poster.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  poster.style.borderColor = "rgba(0, 0, 0, 0.8)";
-  rechercher.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  rechercher.style.borderColor = "rgba(0, 0, 0, 0.8)";
-  deconnexion.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  deconnexion.style.borderColor = "rgba(0, 0, 0, 0.8)";
-  typeResponse.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-  typeResponse.style.borderColor = "rgba(0, 0, 0, 0.8)";
+  btn.style.backgroundColor = "#383638";
+  btn.style.borderColor = "#383638";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#383638";
+  typeTweet.style.borderColor = "#383638";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#383638";
+  poster.style.borderColor = "#383638";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#383638";
+  deconnexion.style.borderColor = "#383638";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#383638";
+  typeResponse.style.borderColor = "#383638";
 });
 
 voyage[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(132, 190, 43, 0.8)";
-  btn.style.borderColor = "rgba(132, 190, 43, 0.8)";
-  typeTweet.style.backgroundColor = "rgba(132, 190, 43, 0.8)";
-  typeTweet.style.borderColor = "rgba(132, 190, 43, 0.8)";
-  poster.style.backgroundColor = "rgba(132, 190, 43, 0.8)";
-  poster.style.borderColor = "rgba(132, 190, 43, 0.8)";
-  rechercher.style.backgroundColor = "rgba(132, 190, 43, 0.8)";
-  rechercher.style.borderColor = "rgba(132, 190, 43, 0.8)";
-  deconnexion.style.backgroundColor = "rgba(132, 190, 43, 0.8)";
-  deconnexion.style.borderColor = "rgba(132, 190, 43, 0.8)";
-  typeResponse.style.backgroundColor = "rgba(132, 190, 43, 0.8)";
-  typeResponse.style.borderColor = "rgba(132, 190, 43, 0.8)";
+  btn.style.backgroundColor = "#99D89C";
+  btn.style.borderColor = "#99D89C";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#99D89C";
+  typeTweet.style.borderColor = "#99D89C";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#99D89C";
+  poster.style.borderColor = "#99D89C";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#99D89C";
+  deconnexion.style.borderColor = "#99D89C";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#99D89C";
+  typeResponse.style.borderColor = "#99D89C";
 });
 
 cuisine[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(38, 0, 255, 0.8)";
-  btn.style.borderColor = "rgba(38, 0, 255, 0.8)";
-  typeTweet.style.backgroundColor = "rgba(38, 0, 255, 0.8)";
-  typeTweet.style.borderColor = "rgba(38, 0, 255, 0.8)";
-  poster.style.backgroundColor = "rgba(38, 0, 255, 0.8)";
-  poster.style.borderColor = "rgba(38, 0, 255, 0.8)";
-  rechercher.style.backgroundColor = "rgba(38, 0, 255, 0.8)";
-  rechercher.style.borderColor = "rgba(38, 0, 255, 0.8)";
-  deconnexion.style.backgroundColor = "rgba(38, 0, 255, 0.8)";
-  deconnexion.style.borderColor = "rgba(38, 0, 255, 0.8)";
-  typeResponse.style.backgroundColor = "rgba(38, 0, 255, 0.8)";
-  typeResponse.style.borderColor = "rgba(38, 0, 255, 0.8)";
+  btn.style.backgroundColor = "#999FD4";
+  btn.style.borderColor = "#999FD4";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#999FD4";
+  typeTweet.style.borderColor = "#999FD4";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#999FD4";
+  poster.style.borderColor = "#999FD4";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#999FD4";
+  deconnexion.style.borderColor = "#999FD4";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#999FD4";
+  typeResponse.style.borderColor = "#999FD4";
 });
 
 art[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "rgba(255, 192, 203, 0.9)";
-  btn.style.borderColor = "rgba(255, 192, 203, 0.9)";
-  typeTweet.style.backgroundColor = "rgba(255, 192, 203, 0.9)";
-  typeTweet.style.borderColor = "rgba(255, 192, 203, 0.9)";
-  poster.style.backgroundColor = "rgba(255, 192, 203, 0.9)";
-  poster.style.borderColor = "rgba(255, 192, 203, 0.9)";
-  rechercher.style.backgroundColor = "rgba(255, 192, 203, 0.9)";
-  rechercher.style.borderColor = "rgba(255, 192, 203, 0.9)";
-  deconnexion.style.backgroundColor = "rgba(255, 192, 203, 0.9)";
-  deconnexion.style.borderColor = "rgba(255, 192, 203, 0.9)";
-  typeResponse.style.backgroundColor = "rgba(255, 192, 203, 0.9)";
-  typeResponse.style.borderColor = "rgba(255, 192, 203, 0.9)";
+  btn.style.backgroundColor = "#DEACE2";
+  btn.style.borderColor = "#DEACE2";
+  btn.style.color = "white";
+  typeTweet.style.backgroundColor = "#DEACE2";
+  typeTweet.style.borderColor = "#DEACE2";
+  typeTweet.style.color = "white";
+  poster.style.backgroundColor = "#DEACE2";
+  poster.style.borderColor = "#DEACE2";
+  poster.style.color = "white";
+  deconnexion.style.backgroundColor = "#DEACE2";
+  deconnexion.style.borderColor = "#DEACE2";
+  deconnexion.style.color = "white";
+  typeResponse.style.backgroundColor = "#DEACE2";
+  typeResponse.style.borderColor = "#DEACE2";
 });
 
 var modal = document.getElementById("myModal");

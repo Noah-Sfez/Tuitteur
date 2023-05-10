@@ -2,6 +2,13 @@
     display: flex;
     flex-direction: column;
     padding: 2%;
+    margin-left: 30%;
+}
+.last-profil{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-left: 10%;
 }
 .last form{
     display: flex;
@@ -19,12 +26,15 @@
 }
 .deconnexion{
     font-size: x-large;
-    background-color: var(--couleur-tweeter);
-    padding: 1%;
-    border-radius: 25px;
-    color: white;
-    height: 34px;
+    background-color: #EDEEC9;
+    padding: 5%;
+    width: 135px;
+    color: black;
     font-weight: bold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
     margin-left: 3%;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
@@ -34,12 +44,17 @@
     margin-top: 15%;
     padding: 2% 15% 4% 4%;
     color: white;
-    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     cursor: pointer;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    width: 210px;
 }
 .filter-buttons{
-    margin-top: 40%;
+    margin-top: 8%;
     margin-right: 20%;
+    display: flex;
+    flex-direction: column;
 }
 .reset-filter{
     font-size: x-large;
@@ -48,12 +63,12 @@
     padding: 2% 15% 4% 4%;
     color: white;
     border-radius: 20px;
-    background-color: var(--couleur-tweeter);
-    border-color: var(--couleur-tweeter);
+    background-color: rgb( 119, 191, 163);
+    border-color: rgb( 119, 191, 163);
     cursor: pointer;
 }
 .reset-filter:hover{
-    background-color: rgb(6, 138, 190);
+    background-color: rgb(87, 187, 149);
 }
 
 @media all and (max-device-width:480px){
@@ -81,4 +96,3 @@
         margin-right: 20%;
     }
   }
-

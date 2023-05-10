@@ -1,204 +1,213 @@
 .center{
-  padding-top: 1%;
-  margin-left: 2%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-width: 2px;
-  border-left: solid;
-  border-right: solid;
-  border-color: rgb(223, 221, 221);
-  min-height: 1000px;
-  max-height: auto;
-}
-.maison{
-  font-size: xx-large;
-}
-.poster{
-  margin-top: 2%;
-}
-.other-tweet{
-  font-size: large;
-  flex-wrap: wrap;
-}
-.pseudo_tweet{
-  font-weight: bold;
-  font-size: x-large;
-  font-family: 'Prompt', sans-serif;
-}
-.message_tweet{
-  font-weight: bold;
-  font-family: 'Prompt', sans-serif;
-}
-.tweet_content{
-  width: 500px;
-  gap: 30px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgb(199, 199, 199);
-  padding: 2%;
-  margin-right: 22px;
-}
-.pseudo_message{
-  display: flex;
-  flex-direction: column;
-}
-.date_supprimer{
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: flex-end;
-  justify-content: end;
-  display: block;
-}
-.poubelle{
-  width: 25px;
-  margin-left: 80%;
-}
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
+    padding-top: 1%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 1000px;
+    max-height: auto;
   }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-.poster{
-  background-color: var(--couleur-tweeter);
-  font-size: large;
-  color: white;
-  position: relative;
-  z-index: 1;
-  padding: 1%;
-  border-radius: 20px;
-  border-color: rgb(0, 172, 238);
-  margin-left: 80%;
-  margin-bottom: 2%;
-  cursor: pointer;
-  animation: bounce 1s ease-out infinite;
-  
-}
-.type_tweet{
-  margin-top: 1%;
-  font-size: large;
-  background-color: var(--couleur-tweeter);
-  color: white;
-  border-color: rgb(0, 172, 238);
-  font-weight: bold;
-  border-radius: 20px;
-  margin-left: 5%;
-}
-.heure_type{
-  width: 25%;
-  min-width: 23%
-}
-.input-media{
-  margin-left: 5%;
-  border-radius: 50%;
-  transition: 0.5s;
-}
-.input-media:hover{
-  background-color: rgba(0, 172, 238, 0.2);
-}
-.text_tweet{
-  display: flex;
-  justify-content: center;
-}
-
-.type_response{
-  font-weight: bold;
-  background-color: rgba(0, 172, 238, 0.6);
-  color: white;
-  padding: 2%;
-  border-radius: 20px;
-  font-size: large;
-  width: max-content;
-}
-.sport{
-  background-color: var(--couleur-sport);
-  border-color: var(--couleur-sport);
-}
-.sport:hover{
-  background-color: rgba(202, 3, 3, 0.8);
-}
-.politique{
-  background-color: var(--couleur-politique);
-  border-color: var(--couleur-politique);
-}
-.politique:hover{
-  background-color: rgba(89, 88, 88, 0.8);
-}
-.musique{
-  background-color: var(--couleur-musique);
-  border-color: var(--couleur-musique);
-}
-.musique:hover{
-  background-color: rgba(98, 18, 173, 0.8);
-}
-.divertissement{
-  background-color: var(--couleur-divertissement);
-  border-color: var(--couleur-divertissement);
-}
-.divertissement:hover{
-  background-color: rgba(123, 123, 45, 0.8);
-}
-.cinema{
-  background-color: var(--couleur-cinema);
-  border-color: var(--couleur-cinema);
-}
-.cinema:hover{
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.voyage{
-  background-color: var(--couleur-voyage);
-  border-color: var(--couleur-voyage);
-}
-.voyage:hover{
-  background-color: rgba(86, 126, 26, 0.8);
-}
-.cuisine{
-  background-color: var(--couleur-cuisine);
-  border-color: var(--couleur-cuisine);
-}
-.cuisine:hover{
-  background-color:rgba(24, 4, 138, 0.8);
-}
-.art{
-  background-color: var(--couleur-art);
-  border-color: var(--couleur-art);
-}
-.art:hover{
-  background-color: rgba(180, 114, 125, 0.9);
-}
-.image-tweet{
-  width: 60%;
-  margin-left: 25%;
-  border-radius: 5px;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
-}
-@media all and (max-device-width:480px){
-  .center{
-    width: 700px;
-    margin-left: 0;
-  }
-  .pseudo_tweet{
+  .maison{
     font-size: xx-large;
   }
-  .center form{
-    width: 100%;
+  .poster{
+    margin-top: 2%;
+  }
+  .form-tweet{
+    background-color: rgb( 119, 191, 163);
+    border-radius: 20px;
+    padding: 2%;
+    color: white;
+  }
+  .other-tweet{
+    font-size: large;
+    flex-wrap: wrap;
+  }
+  .pseudo_tweet{
+    font-weight: bold;
+    font-size: x-large;
+    font-family: 'Prompt', sans-serif;
+  }
+  .lien-pseudo:hover{
+    text-decoration: underline;
   }
   .message_tweet{
-    font-size: x-large;
-  }
-  .type_response{
-    font-size: large;
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
   }
   .tweet_content{
-    width: 675px;
+    width: 500px;
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-right: 22px;
+    background-color: #EDEEC9;
+    margin-top: 2%;
+    border-radius: 20px;
+  }
+  
+  .pseudo_message{
+    display: flex;
+    flex-direction: column;
+  }
+  .date_supprimer{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: end;
+    display: block;
+  }
+  .poubelle{
+    width: 25px;
+    margin-left: 80%;
+  }
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
   .poster{
-    font-size: x-large;
+    background-color: #EDEEC9;
+    font-size: large;
+    color: black;
+    position: relative;
+    z-index: 1;
+    padding: 1%;
+    border-radius: 20px;
+    border-color: #EDEEC9;
+    margin-left: 80%;
+    margin-bottom: 2%;
+    font-weight: bold;
+    cursor: pointer;
+    animation: bounce 1s ease-out infinite;
+    
   }
   .type_tweet{
-    font-size: x-large;
+    margin-top: 1%;
+    font-size: large;
+    background-color: #EDEEC9;
+    color: black;
+    border-color: #EDEEC9;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 5%;
   }
-}
+  .heure_type{
+    width: 25%;
+    min-width: 23%
+  }
+  .input-media{
+    margin-left: 5%;
+    border-radius: 50%;
+    transition: 0.5s;
+  }
+  .input-media:hover{
+    background-color: rgba(0, 172, 238, 0.2);
+  }
+  .text_tweet{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .type_response{
+    font-weight: bold;
+    background-color: #98C9A3;
+    color: white;
+    padding: 2%;
+    border-radius: 20px;
+    font-size: large;
+    width: max-content;
+  }
+  .sport{
+    background-color: var(--couleur-sport);
+    border-color: var(--couleur-sport);
+  }
+  .sport:hover{
+    background-color: rgba(202, 3, 3, 0.8);
+  }
+  .politique{
+    background-color: var(--couleur-politique);
+    border-color: var(--couleur-politique);
+  }
+  .politique:hover{
+    background-color: rgba(89, 88, 88, 0.8);
+  }
+  .musique{
+    background-color: var(--couleur-musique);
+    border-color: var(--couleur-musique);
+  }
+  .musique:hover{
+    background-color: rgba(98, 18, 173, 0.8);
+  }
+  .divertissement{
+    background-color: var(--couleur-divertissement);
+    border-color: var(--couleur-divertissement);
+  }
+  .divertissement:hover{
+    background-color: rgba(123, 123, 45, 0.8);
+  }
+  .cinema{
+    background-color: var(--couleur-cinema);
+    border-color: var(--couleur-cinema);
+  }
+  .cinema:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .voyage{
+    background-color: var(--couleur-voyage);
+    border-color: var(--couleur-voyage);
+  }
+  .voyage:hover{
+    background-color: rgba(86, 126, 26, 0.8);
+  }
+  .cuisine{
+    background-color: var(--couleur-cuisine);
+    border-color: var(--couleur-cuisine);
+  }
+  .cuisine:hover{
+    background-color:rgba(24, 4, 138, 0.8);
+  }
+  .art{
+    background-color: var(--couleur-art);
+    border-color: var(--couleur-art);
+  }
+  .art:hover{
+    background-color: rgba(180, 114, 125, 0.9);
+  }
+  .image-tweet{
+    width: 60%;
+    margin-left: 25%;
+    border-radius: 5px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+  }
+  @media all and (max-device-width:480px){
+    .center{
+      width: 700px;
+      margin-left: 0;
+    }
+    .pseudo_tweet{
+      font-size: xx-large;
+    }
+    .center form{
+      width: 100%;
+    }
+    .message_tweet{
+      font-size: x-large;
+    }
+    .type_response{
+      font-size: large;
+    }
+    .tweet_content{
+      width: 675px;
+    }
+    .poster{
+      font-size: x-large;
+    }
+    .type_tweet{
+      font-size: x-large;
+    }
+  }

@@ -11,48 +11,57 @@
 
 
 a{
-  color: rgb(0, 0, 0);
-  text-decoration: unset;
+    color: rgb(0, 0, 0);
+    text-decoration: unset;
+  }
+  
+  main{
+    display: flex;
+    margin-left: 33.3%;
+  }
+  body{
+    background-color: rgb(191, 216, 189);
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  textarea{
+    border-color: rgb( 119, 191, 163);
+    background-color: rgb( 119, 191, 163);
+    resize: none;
+    color: white;
+    font-size: medium;
+  }
+.space-top{
+    margin-top: 2%;
+    display: flex;
 }
-
-main{
-  display: flex;
-  margin-left: 33.3%;
+.bienvenue{
+    display: flex;
+    position: relative;
+    left: -700px;
+    animation: deplacement 8s linear infinite;
 }
-body{
-  background-color: #ffffff;
-  display: flex;
-}
-textarea{
-  border-color: #ffffff;
-  resize: none;
-}
-
-
-.flou{
-  filter: blur(4px);
-}
-h1, h2, h3, p, nav, a{
-  font-family: 'Prompt', sans-serif;
-}
-
-::placeholder{
-  font-family: 'Prompt', sans-serif;
-}
-.hidden {
-  display: none;
+@keyframes deplacement {
+    0% {
+      left: -700;
+    }
+    100% {
+      left: calc(100% + 100px); /*ajustez la valeur de 100px selon vos besoins*/
+    }
+  }
+.logo-lotus{
+    width: 5%;
+    height: 3%;
 }
 :root{
-  --couleur-tweeter: rgb(0, 172, 238);
-  --couleur-sport: rgba(255, 0, 0, 0.8);
-  --couleur-politique: rgba(128, 128, 128, 0.8);
-  --couleur-musique: rgba(138, 43, 226, 0.8);
-  --couleur-divertissement: rgba(196, 196, 89, 0.8);
-  --couleur-cinema: rgba(0, 0, 0, 0.8);
-  --couleur-voyage: rgba(132, 190, 43, 0.8);
-  --couleur-cuisine: rgba(38, 0, 255, 0.8);
-  --couleur-art: rgba(255, 192, 203, 0.9);
-}
-
-
-
+    --couleur-tweeter: rgb(0, 172, 238);
+    --couleur-sport: #E38181;
+    --couleur-politique: #AC9F9F;
+    --couleur-musique: #BE86B9;
+    --couleur-divertissement: #CFD492;
+    --couleur-cinema: #383638;
+    --couleur-voyage: #99D89C;
+    --couleur-cuisine: #999FD4;
+    --couleur-art: #DEACE2;
+  }
