@@ -2,13 +2,15 @@
     display: flex;
     flex-direction: column;
     font-size: x-large;
-    
     gap: 80%;
     width: 140px;
-    background-color: rgb(221, 231, 199);
+    background-color: rgb(222, 182, 247);
     padding: 10%;
     border-radius: 20px;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+}
+.nav-profil{
+  margin-top: 6%;
 }
 .nav{
     color: rgb(0, 0, 0);
@@ -18,7 +20,7 @@
     transition: 0.5s;
 }
 .nav:hover{
-    background-color: rgb( 119, 191, 163);
+    background-color: rgb(243, 235, 245);
     padding: 10px;
     border-radius: 20px;
 }

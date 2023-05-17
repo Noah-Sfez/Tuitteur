@@ -19,11 +19,9 @@ if($_POST){
     $mail=$_POST['mail'];
     $password=$_POST['mdp'];
 
-    $query = "SELECT * FROM users WHERE prenom = :prenom AND nom = :nom AND mail = :mail";
+    $query = "SELECT * FROM users WHERE mail = :mail";
     $stmt = $pdo->prepare($query);
     $stmt->execute([
-        'prenom' => $prenom,
-        'nom' => $nom,
         'mail'=> $mail
     ]);
     
@@ -66,38 +64,30 @@ if($_POST){
 
 <div class="back-connect">
     <div class="p-3 rounded-4">
-    <h1 class="text-white">Connectez vous !</h1>
-    <form method="post">
-    <div class="mb-3 mt-3 form-floating">
-        <input type="text" name="prenom" id="floatingInput" class="form-control" required>
-        <label class="form-label" for="floatingInput">Prénom :</label>
+        <h1 class="text-white">Connectez vous !</h1>
+        <form method="post">
+            <div class="mb-3 form-floating">
+                <input type="email" class="form-control" id="floatingInput" name="mail" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+                <label for="exampleInputEmail1" for="floatingInput" class="form-label">Adresse e-mail :</label>
+            </div>
+            <div class="mb-3 form-floating"">
+                <input type="password" class="form-control" id="floatingInput" name="mdp" id="exampleInputPassword1" required>
+                <label for="exampleInputPassword1" for="floatingInput" class="form-label">Password :</label>
+            </div>
+            <div class="mb-3 d-flex justify-content-center flex-column align-items-center">
+                <button type="submit" class="btn text-bg-light animate__bounce p-3 d-flex justify-content-center col-6 fs-5 mt-3 align-items-center">Se connecter</button>
+                    <div class="d-flex text-white justify-content-center mt-3">
+                        <p >Je n'ai pas de compte.</p>
+                        <a href="inscription.php" class="text-white d-flex justify-content-center ms-3">M'inscrire</a>
+                    </div>
+            </div>
+        </form>
     </div>
-    <div class="mb-3 form-floating">
-        <input type="text" name="nom" id="floatingInput" class="form-control"required>
-        <label class="form-label" for="floatingInput">Nom :</label>
-    </div>
-    <div class="mb-3 form-floating">
-        <input type="email" class="form-control" id="floatingInput" name="mail" id="exampleInputEmail1" aria-describedby="emailHelp" required>
-        <label for="exampleInputEmail1" for="floatingInput" class="form-label">Adresse e-mail :</label>
-    </div>
-    <div class="mb-3 form-floating"">
-        <input type="password" class="form-control" id="floatingInput" name="mdp" id="exampleInputPassword1" required>
-        <label for="exampleInputPassword1" for="floatingInput" class="form-label">Password :</label>
-    </div>
-    <div class="mb-3 d-flex justify-content-center flex-column align-items-center">
-    <button type="submit" class="btn text-bg-light animate__bounce p-3 d-flex justify-content-center col-6 fs-5 mt-3 align-items-center">Se connecter</button>
-    <div class="d-flex text-white justify-content-center mt-3">
-        <p >Je n'ai pas de compte.</p>
-        <a href="inscription.php" class="text-white d-flex justify-content-center ms-3">M'inscrire</a>
-    </div>
-    </div>
-    </form>
-</div>
 </div>
     
-    <?php if (isset($error)): ?>
-        <p class="error"><?php echo $error; ?></p>
-    <?php endif; ?>
+<?php if (isset($error)): ?>
+    <p class="error"><?php echo $error; ?></p>
+<?php endif; ?>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

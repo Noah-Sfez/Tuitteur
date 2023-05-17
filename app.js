@@ -15,6 +15,22 @@ buttons.forEach(Element => {
     })
   })
 })
+// Sélectionnez le bouton de réinitialisation
+const resetButton = document.getElementById("resetButton");
+
+// Ajoutez un gestionnaire d'événements au bouton de réinitialisation
+resetButton.addEventListener("click", () => {
+  // Affichez tous les tweets en rétablissant leur style d'affichage initial
+  tweets.forEach(tweet => {
+    tweet.style.display = "block";
+  });
+});
+
+
+
+
+
+
 const connect = document.querySelector('.modal-connect');
 
 window.addEventListener('scroll', ()=>{
@@ -174,6 +190,24 @@ art[0].addEventListener("click", function() {
   typeResponse.style.backgroundColor = "#DEACE2";
   typeResponse.style.borderColor = "#DEACE2";
 });
+
+resetButton.addEventListener("click", function() {
+  btn.style.backgroundColor = "#edeec9";
+  btn.style.borderColor = "#edeec9";
+  btn.style.color ="black";
+  typeTweet.style.backgroundColor = "#edeec9";
+  typeTweet.style.borderColor = "#edeec9";
+  typeTweet.style.color = "black";
+  poster.style.backgroundColor = "#edeec9";
+  poster.style.borderColor = "#edeec9";
+  poster.style.color = "black";
+  deconnexion.style.backgroundColor = "#edeec9";
+  deconnexion.style.borderColor = "#edeec9";
+  deconnexion.style.color = "black";
+  typeResponse.style.backgroundColor = "#edeec9";
+  typeResponse.style.borderColor = "#edeec9";
+});
+
 
 var modal = document.getElementById("myModal");
 

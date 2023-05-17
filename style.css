@@ -3,7 +3,6 @@
 @import url(./components/nav.css);
 @import url(./components/modal.css);
 @import url(./components/inscription.css);
-@import url(./components/recherche.css);
 @import url(./components/connexion.css);
 @import url(./components/type.css);
 @import url(./components/profil.css);
@@ -20,14 +19,14 @@ a{
     margin-left: 33.3%;
   }
   body{
-    background-color: rgb(191, 216, 189);
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
   }
   textarea{
-    border-color: rgb( 119, 191, 163);
-    background-color: rgb( 119, 191, 163);
+    border-color: rgb(222, 182, 247);
+    background-color: rgb(222, 182, 247);
     resize: none;
     color: white;
     font-size: medium;
@@ -38,16 +37,15 @@ a{
 }
 .bienvenue{
     display: flex;
-    position: relative;
-    left: -700px;
-    animation: deplacement 8s linear infinite;
+    justify-content: center;
+    animation: deplacement 3.5s linear forwards;
 }
 @keyframes deplacement {
     0% {
-      left: -700;
+      opacity: 0;
     }
     100% {
-      left: calc(100% + 100px); /*ajustez la valeur de 100px selon vos besoins*/
+      opacity: 100%;
     }
   }
 .logo-lotus{
@@ -64,4 +62,5 @@ a{
     --couleur-voyage: #99D89C;
     --couleur-cuisine: #999FD4;
     --couleur-art: #DEACE2;
+    --violet-lotus: rgb(171, 86, 162);
   }

@@ -14,7 +14,7 @@
     margin-top: 2%;
   }
   .form-tweet{
-    background-color: rgb( 119, 191, 163);
+    background-color: rgb(222, 182, 247);
     border-radius: 20px;
     padding: 2%;
     color: white;
@@ -28,9 +28,16 @@
     font-size: x-large;
     font-family: 'Prompt', sans-serif;
   }
-  .lien-pseudo:hover{
+
+  .lien-pseudo {
+    text-decoration: none;
+    transition: 0.5s;
+    }
+    
+    .lien-pseudo:hover {
     text-decoration: underline;
-  }
+    }
+
   .message_tweet{
     font-weight: bold;
     font-family: 'Prompt', sans-serif;
@@ -42,7 +49,7 @@
     flex-direction: column;
     padding: 2%;
     margin-right: 22px;
-    background-color: #EDEEC9;
+    background-color: rgb(255, 197, 248);
     margin-top: 2%;
     border-radius: 20px;
   }
@@ -63,11 +70,14 @@
     margin-left: 80%;
   }
   @keyframes bounce {
-    0%, 100% {
+    0% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px);
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
     }
   }
   .poster{
@@ -115,9 +125,9 @@
   
   .type_response{
     font-weight: bold;
-    background-color: #98C9A3;
-    color: white;
-    padding: 2%;
+    background-color: #EDEEC9;
+    color: black;
+    padding: 2% 4%;
     border-radius: 20px;
     font-size: large;
     width: max-content;
@@ -182,7 +192,6 @@
     width: 60%;
     margin-left: 25%;
     border-radius: 5px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
   }
   @media all and (max-device-width:480px){
     .center{

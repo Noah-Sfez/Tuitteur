@@ -35,8 +35,12 @@
     border-top-right-radius: 20px;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 3%;
+    margin-left: 10%;
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+}
+.deconnexion:hover{
+    scale: 120%;
 }
 .filter-btn{
     font-size: x-large;
@@ -60,15 +64,18 @@
     font-size: x-large;
     font-weight: bold;
     margin-top: 15%;
-    padding: 2% 15% 4% 4%;
-    color: white;
+    margin-left: 20%;
+    margin-right: 18%;
+    padding: 5%;
+    color: black;
     border-radius: 20px;
-    background-color: rgb( 119, 191, 163);
-    border-color: rgb( 119, 191, 163);
+    background-color: #EDEEC9;
+    border-color: #EDEEC9;
     cursor: pointer;
+    transition: 0.5s;
 }
 .reset-filter:hover{
-    background-color: rgb(87, 187, 149);
+    scale: 120%;
 }
 
 @media all and (max-device-width:480px){

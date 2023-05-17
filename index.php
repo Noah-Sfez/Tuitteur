@@ -40,12 +40,12 @@ session_start();
       ?>
 </div>
 <div class="space-top">
-        <div class="header">
+        <header class="header">
             <a href="#" class="nav-button">
               <div class="click">
                 <p>Click Me</p>
                 <img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp">
-                </div>
+              </div>
             </a>
 <!-- J'affiche ici la barre de navigation -->
             <div class="nav-bar">
@@ -59,7 +59,7 @@ session_start();
 <!-- J'affiche le modal qui est géré après avec du JavaScript -->
             <button id="myBtn" class="btn-modal">Composer</button>
             <div id="myModal" class="modal">
-            <div class="modal-content">
+              <div class="modal-content">
               <span class="close">&times;</span>
               <div class="prof-modal">
                 <?php
@@ -67,22 +67,22 @@ session_start();
                 ?>
               </div>
 <!-- Ici on retrouve le form qui est dans le modal pour gérer le post des tweets -->
-              <form action="" method="post" enctype="multipart/form-data">
-                <textarea name="tweet" id="" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
-                <select name="genre" id="" class="type_tweet" required>
-                <option value="">Type</option>
-                  <option value="Sport" class="sport">Sport</option>
-                  <option value="Politique" class="politique">Politique</option>
-                  <option value="Musique" class="musique">Musique</option>
-                  <option value="Divertissement" class="divertissement">Divertissement</option>
-                  <option value="Cinéma" class="cinema">Cinéma</option>
-                  <option value="Voyage" class="voyage">Voyage</option>
-                  <option value="Cuisine" class="cuisine">Cuisine</option>
-                  <option value="Art" class="art">Art</option>
-                </select>
-                <input type="file" accept="image/png, image/jpeg image/gif" name="image_tweet" class="media" id="image_tweet" style="">
-                <input type="submit" value="Tuitts" class="tuitts-modal">
-              </form>
+                <form action="" method="post" enctype="multipart/form-data">
+                  <textarea name="tweet" id="" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
+                  <select name="genre" id="" class="type_tweet" required>
+                    <option value="">Type</option>
+                    <option value="Sport" class="sport">Sport</option>
+                    <option value="Politique" class="politique">Politique</option>
+                    <option value="Musique" class="musique">Musique</option>
+                    <option value="Divertissement" class="divertissement">Divertissement</option>
+                    <option value="Cinéma" class="cinema">Cinéma</option>
+                    <option value="Voyage" class="voyage">Voyage</option>
+                    <option value="Cuisine" class="cuisine">Cuisine</option>
+                    <option value="Art" class="art">Art</option>
+                  </select>
+                  <input type="file" accept="image/png, image/jpeg image/gif" name="image_tweet" class="media" id="image_tweet" style="">
+                  <input type="submit" value="Tuitts" class="tuitts-modal">
+                </form>
               </div>
             </div>
 <!-- Ici j'ai le code pour générer les photos et bannières de profil aléatoirement avec l'url rentrée dans la base de donnée -->
@@ -99,7 +99,7 @@ session_start();
                 <p><?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']; ?></p>
               </div>
             </div>
-          </div>      
+        </header>
             <main>
 <!-- Ici on a le form pour l'espace de tweet principal -->
             <div class="center center-respo">
@@ -154,7 +154,10 @@ session_start();
                   if(isset($_SESSION) && !empty($_SESSION)){
 // Et donc à l'intérieur je vérifie que l'id user du tweet est différent de celui de la SESSION pour que l'utilisateur ne puisse pas cliquer sur ses propres tweets à lui
                     if($tweet['id_users'] != $_SESSION['user_id']){ 
-                      echo '<a href="user.php?profil='. $tweet['pseudo'] . '" class="pseudo_tweet lien-pseudo">'.$tweet['pseudo'].'</a>';
+                      //echo '<a href="user.php?profil='. $tweet['pseudo'] . '" class="pseudo_tweet lien-pseudo">'.$tweet['pseudo'].'</a>';
+                      echo '<a href="user.php?profil='. $tweet['pseudo'] . '" class="pseudo_tweet lien-pseudo">
+                              <span class="pseudo-text">' . $tweet['pseudo'] . '</span>
+                            </a>';
                     } else {
                       echo '<span class="pseudo_tweet">'.$tweet['pseudo'].'</span>'; 
                     }
@@ -193,7 +196,7 @@ session_start();
                 <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
                 <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
               </div>
-                <a href="index.php" class="reset-filter">Reset filter</a>
+                <button id="resetButton" class="reset-filter">Reset</button>
             </div>
 
             <div class="header">
