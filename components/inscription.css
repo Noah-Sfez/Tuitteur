@@ -24,10 +24,7 @@
     width: 90%;
     height: 35px;
 }
-.naissance{
-    font-size: x-large;
-    font-weight: 100px;
-}
+
 .selection select{
     height: 26px;
 }
@@ -41,7 +38,7 @@
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
 }
 .recap{
-    background-color: var(--couleur-tweeter);
+    background-color: rgb(222, 182, 247);
     color: white;
     padding: 3%;
     border-radius: 20px;
@@ -50,7 +47,7 @@
     font-size: x-large;
 }
 .valid{
-    color: var(--couleur-tweeter);
+    color: rgb(222, 182, 247);
     font-size: xx-large;
     background-color: white;
     padding: 1%;
@@ -67,7 +64,7 @@
 
 
 .inscrip-back{
-    background-color: var(--couleur-tweeter);
+    background-color: rgb(222, 182, 247);
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }

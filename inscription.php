@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Titre de la page</title>
+    <title>Inscription</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="./images/lotus-symbol.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body class="inscrip">
+<body class="inscri">
 <?php
 $pdo = new PDO('mysql:host=localhost;dbname=testtwitter','root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 //var_dump($pdo);
 session_start();
+$error = '';
 if($_POST){
     $_POST['prenom'] = addslashes($_POST['prenom']);
     $_POST['nom'] = addslashes($_POST['nom']);
@@ -39,7 +42,7 @@ if($_POST){
         <li>Adresse e-mail : <?php echo $_POST['mail']; ?></li>
         <li>Mot de passe : <?php echo $_POST['mdp']; ?></li>
     </ul>
-    <a href="index.php" target="blank" class="valid">Valider votre compte</a>
+    <a href="index.php" class="valid">Valider votre compte</a>
 </div>
 <?php
 }else{
@@ -65,10 +68,10 @@ if($_POST){
     <p class="page-connect">J'ai déjà un compte. <a href="connexion.php">Me connecter</a></p>
 </div>-->
 
-
+<!--<h1 class="title_background">Lotus</h1>
 <div class="inscrip-back">
     <div class="p-3 rounded-4">
-        <h1 class="text-white">Créer votre compte</h1>
+        <h2 class="text-white">Créer votre compte</h2>
         <form method="post">
         <div class="mb-3 form-floating">
             <input type="text" name="prenom" id="floatingInput" class="form-control" required>
@@ -103,7 +106,55 @@ if($_POST){
         </div>
         </form>
     </div>
+</div> 
+-->
+
+<div class="form_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
+                <form action="" method="post" class="form_horizontal">
+                    <div class="form_icon"><i class="fa fa-user"></i></div>
+                    <h3 class="title">Inscription</h3>
+                    <p><?php echo $error;?></p>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" type="text" name="prenom" placeholder="Prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" type="text" name="nom" placeholder="Nom" required>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fa fa-user"></i></span>
+                        <input class="form-control" type="text" name="pseudo" placeholder="Pseudo" required>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fa fa-calendar"></i></span>
+                        <input class="form-control" type="date" name="birth" placeholder="" required>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fa fa-envelope-o"></i></span>
+                        <input class="form-control" type="email" name="mail" placeholder="e-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <span class="input-icon"><i class="fa fa-lock"></i></span>
+                        <input class="form-control "type="password" name="mdp" placeholder="password" required>
+                    </div>
+
+                    <button class="btn signin" type="submit">login</button>
+
+                    <ul class="form-options">
+                        <li><a href="#"></a></li>
+                        <li><a href="connexion.php">Signin</a><i class="fa fa-arrow-right"></i></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
+
+
 
 <?php
 }

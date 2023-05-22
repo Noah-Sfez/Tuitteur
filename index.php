@@ -22,31 +22,29 @@ session_start();
 <!-- Je vérifie si l'utilisateur est connecté et affiche le modal lui demandant de se connecter au cas où il ne l'est pas -->
   <?php
       if(isset($_SESSION) && !empty($_SESSION)){
-        echo "<div class='bienvenue'><img src='./images/lotus-symbol.png' class='logo-lotus'>" . "<h2 class='maison'>Bonjour " . $_SESSION['pseudo'] . " , bienvenue sur Lotus !</h2>"."<img src='./images/lotus-symbol.png' class='logo-lotus'></div>";
+        echo "<div class='bienvenue'><img src='./images/lotus-symbol.png' class='logo-lotus'>" . "<h2 class='maison'>Bonjour " . $_SESSION['pseudo'] . " , bienvenue sur Lotus !</h2>"."<img src='./images/lotus-symbol.png' class='logo-lotus'></div>
+        <a href='inscription.php' class='deconnexion-responsive'>Déconnexion</a>
+        <div class='overlay'></div>
+        <button class='button-menu'>Menu</button>";
     } else {
-        echo "<div class='maison'>";
-        echo "<h3>Home</h3>";
-        echo "</div>";
-        echo "<div class='modal-connect'>";
-        echo "<div class='modal-content-connect'>";
-        echo "<h2 class='title-modal-connect'>Connectez vous pour accéder à Lotus</h2>";
-        echo "<div class='button-modal-connect'>";
-        echo "<a href='inscription.php' class='inscrip-modal-connect'>S'inscrire</a>";
-        echo "<a href='connexion.php' class='connex-modal-connect'>Se connecter</a>";
-        echo "</div>";
-        echo "</div>";
-        echo "</div>";
+        echo "<div class='maison'>
+                <h3>Home</h3>
+              </div>
+              <div class='modal-connect'>
+                <div class='modal-content-connect'>
+                  <h2 class='title-modal-connect'>Connectez vous pour accéder à Lotus</h2>
+                    <div class='button-modal-connect'>
+                      <a href='inscription.php' class='inscrip-modal-connect'>S'inscrire</a>
+                      <a href='connexion.php' class='connex-modal-connect'>Se connecter</a>
+                    </div>
+                </div> 
+              </div>";
     };
       ?>
 </div>
 <div class="space-top">
         <header class="header">
-            <a href="#" class="nav-button">
-              <div class="click">
-                <p>Click Me</p>
-                <img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp">
-              </div>
-            </a>
+            
 <!-- J'affiche ici la barre de navigation -->
             <div class="nav-bar">
                 <!--<img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-cache">-->
@@ -54,7 +52,7 @@ session_start();
                 <a href="" class="nav">Bookmarks</a>
                 <a href="profil.php" class="nav">Profil</a>
                 <a href="" class="nav">Explore</a>
-                <a href="" class="nav">Settings </a> 
+                <a href="settings.php" class="nav">Settings </a> 
             </div> 
 <!-- J'affiche le modal qui est géré après avec du JavaScript -->
             <button id="myBtn" class="btn-modal">Composer</button>
@@ -68,7 +66,7 @@ session_start();
               </div>
 <!-- Ici on retrouve le form qui est dans le modal pour gérer le post des tweets -->
                 <form action="" method="post" enctype="multipart/form-data">
-                  <textarea name="tweet" id="" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
+                  <textarea name="tweet" id="messagemodal" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
                   <select name="genre" id="" class="type_tweet" required>
                     <option value="">Type</option>
                     <option value="Sport" class="sport">Sport</option>
@@ -81,7 +79,7 @@ session_start();
                     <option value="Art" class="art">Art</option>
                   </select>
                   <input type="file" accept="image/png, image/jpeg image/gif" name="image_tweet" class="media" id="image_tweet" style="">
-                  <input type="submit" value="Tuitts" class="tuitts-modal">
+                  <input type="submit" value="Tuitts" class="tuitts-modal" id="bouton">
                 </form>
               </div>
             </div>
@@ -119,6 +117,19 @@ session_start();
                 <input type="file" accept="image/png, image/jpeg image/gif" name="image_tweet" class="media" id="image_tweet" style="">
                 <input type="submit" id="poster" value="Tuitts" class="poster">
               </form>
+              <div class="lost">
+                <div class="filter-buttons">
+                  <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
+                  <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
+                  <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
+                  <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
+                  <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
+                  <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
+                  <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
+                  <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
+                </div>
+                <button class="reset-filter resetButton">Reset</button>
+            </div>
 <!-- Ici on a le code pour pouvoir envoyer et stocker les images des tweets -->
               <?php
               $destination = NULL;
@@ -169,16 +180,16 @@ session_start();
                   if(isset($tweet['image_chemin']) && !empty($tweet['image_chemin'])) {
                     echo '<img src="' . $tweet['image_chemin'] . '" alt="" class="image-tweet">';
                   }
-                  echo '</div>';
-                  echo '<div class="heure_type">';
-                  echo '<div class="date_supprimer">';
-                  echo $tweet['date_heure_message'] . '<br>';
-                  echo '</div>';
-                  echo '<div class="type_response" id="type_resp">';
-                  echo $tweet['type'];
-                  echo '</div>';
-                  echo '</div>';
-                  echo '</div>';
+                  echo '</div>
+                          <div class="heure_type">
+                            <div class="date_supprimer">';
+                  echo        $tweet['date_heure_message'] . '<br>';
+                  echo     '</div>
+                            <div class="type_response" id="type_resp">';
+                  echo        $tweet['type'];
+                  echo      '</div>
+                          </div>
+                        </div>';
               } 
             ?>
         </div>
@@ -187,34 +198,17 @@ session_start();
             <div class="last">
               <a href="inscription.php" class="deconnexion" id="deconnexion">Déconnexion</a>
               <div class="filter-buttons">
-                <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
-                <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
-                <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
-                <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
-                <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
-                <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
-                <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
-                <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
+                <button class="filter-btn buttons-all buttons-noresp sport" data-tag="Sport">Sport</button>
+                <button class="filter-btn buttons-all buttons-noresp politique" data-tag="Politique">Politique</button>
+                <button class="filter-btn buttons-all buttons-noresp musique" data-tag="Musique">Musique</button>
+                <button class="filter-btn buttons-all buttons-noresp divertissement" data-tag="Divertissement">Divertissement</button>
+                <button class="filter-btn buttons-all buttons-noresp cinema" data-tag="Cinéma">Cinéma</button>
+                <button class="filter-btn buttons-all buttons-noresp voyage" data-tag="Voyage">Voyage</button>
+                <button class="filter-btn buttons-all buttons-noresp cuisine" data-tag="Cuisine">Cuisine</button>
+                <button class="filter-btn buttons-all buttons-noresp art" data-tag="Art">Art</button>
               </div>
-                <button id="resetButton" class="reset-filter">Reset</button>
+              <button class="reset-filter resetButton noResp">Reset</button>
             </div>
-
-            <div class="header">
-            <div class="lost">
-              <div class="filter-buttons">
-                <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
-                <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
-                <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
-                <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
-                <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
-                <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
-                <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
-                <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
-              </div>
-                <a href="index.php" class="reset-filter lost">Reset filter</a>
-                <a href="inscription.php" class="deconnexion lost" id="deconnexion">Déconnexion</a>
-            </div>
-            </div> 
             </main>
       </div>
     <script src="app.js"></script>

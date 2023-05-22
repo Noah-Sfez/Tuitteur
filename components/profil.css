@@ -36,7 +36,10 @@
     flex-direction: column;
 }
 
-@media all and (max-device-width:480px){
+
+
+
+@media all and (max-device-width:1200px){
     .head-profil{
         border-right: white;
         width: 661px;
@@ -45,6 +48,9 @@
         width: 100%;
     }
     .banniere-profil{
-        width: 700px;
+        width: 660px;
+    }
+    .main-profil{
+        margin-left: 15%;
     }
   }

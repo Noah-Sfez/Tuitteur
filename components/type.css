@@ -1,8 +1,6 @@
 .last{
-    display: flex;
-    flex-direction: column;
-    padding: 2%;
-    margin-left: 30%;
+    margin-left: 45%;
+    position: fixed;
 }
 .last-profil{
     display: flex;
@@ -42,6 +40,9 @@
 .deconnexion:hover{
     scale: 120%;
 }
+.deconnexion-responsive{
+    display: none;
+}
 .filter-btn{
     font-size: x-large;
     font-weight: bold;
@@ -78,28 +79,49 @@
     scale: 120%;
 }
 
-@media all and (max-device-width:480px){
-    .deconnexion{
-        font-size: x-large;
-        padding: 5%;
-        width: 100%;
-    }
+@media all and (max-device-width:1200px){
     .last{
+        display: none;
+    }
+    .last-profil{
         display: none;
     }
     .lost{
         display: block;
-        left: -314px;
-        bottom: -476px;
-        position: relative;
     }
-    .reset-filter .lost{
-        margin-top: 10%;
-    }
-    .lost .deconnexion{
+    .deconnexion-responsive{
         display: block;
-        margin-top: 5%;
-        margin-left: 0;
-        margin-right: 20%;
+        font-size: x-large;
+        background-color: #EDEEC9;
+        padding: 1%;
+        width: 135px;
+        color: black;
+        font-weight: bold;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-left: 80%;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
+        transition: 0.5s;
+    }
+
+    .filter-buttons{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+        gap: 2%;
+    }
+    .filter-btn{
+        margin-top: 2%;
+        padding: 0;
+    }
+    .reset-filter{
+        margin-top: 2%;
+        padding: 2%;
+        margin-left: 37%;
+        margin-right: 40%;
     }
   }

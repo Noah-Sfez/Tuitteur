@@ -29,13 +29,32 @@
     display: flex;
     justify-content: center;
 }
+.button-menu{
+    display: none;
+}
 
-@media all and (max-device-width:480px){
+@media all and (max-device-width:1200px){
     .profil{
         display: none;
     }
-    .header{
-        margin-left: 5%;
-        width: 20%;
+    .space-top{
+        display: flex;
+        justify-content: center;
     }
+    body{
+        display: flex;
+        align-items: flex-start;
+    }
+    .button-menu{
+        display: block;
+        position: absolute;
+        margin-left: 1%;
+        border-radius: 50px;
+        font-size: x-large;
+        padding: 1%;
+        background-color: #EDEEC9;
+        border-color: #EDEEC9;
+        font-weight: 700;
+    }
+    
   }

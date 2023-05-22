@@ -6,6 +6,7 @@
 @import url(./components/connexion.css);
 @import url(./components/type.css);
 @import url(./components/profil.css);
+@import url(./components/settings.css);
 
 
 
@@ -19,7 +20,7 @@ a{
     margin-left: 33.3%;
   }
   body{
-    background-color: rgb(255, 255, 255);
+    background-color: var(--background-clair);
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -52,8 +53,12 @@ a{
     width: 5%;
     height: 3%;
 }
+
+.dark-mode{
+  background-color: var(--background-dark);
+}
+
 :root{
-    --couleur-tweeter: rgb(0, 172, 238);
     --couleur-sport: #E38181;
     --couleur-politique: #AC9F9F;
     --couleur-musique: #BE86B9;
@@ -63,4 +68,7 @@ a{
     --couleur-cuisine: #999FD4;
     --couleur-art: #DEACE2;
     --violet-lotus: rgb(171, 86, 162);
+    --background-dark: black;
+    --background-clair: white;
+    
   }
