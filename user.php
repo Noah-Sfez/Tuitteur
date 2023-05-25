@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <?php
@@ -23,15 +24,14 @@
         //var_dump($profil_id);
     ?>
     <div class='overlay'></div>
-    <button class='button-menu'>Menu</button>
+    <button class='button-menu profil-page'>Menu</button>
     <header class="header nav-profil">
-      <a href="#" class="nav-button"><img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp"></a>
-      <div class="nav-bar user">
+      <div class="nav-bar user profil">
         <a href="index.php" class="nav">Home</a>
         <a href="" class="nav">Bookmarks</a>
         <a href="profil.php" class="nav">Profil</a>
-        <a href="" class="nav">Explore</a>
-        <a href="" class="nav">Settings </a>
+        <a href="recherche.php" class="nav">Explore</a>
+        <a href="settings.php" class="nav">Settings </a>
       </div> 
       <button id="myBtn" class="btn-modal">Tueets</button>
 
@@ -121,9 +121,6 @@
               echo '</div>';
             }
           ?>
-          <script>
-            var tweet_id = <?php echo $tweet_id;?>;
-          </script> 
           <div id="confirm-modal-delete">
             <div class="confirm-modal-content">
               <p class="confirm-quest">Voulez-vous vraiment supprimer ce tweet ?</p>
@@ -139,16 +136,16 @@
       <div class="last-profil">
         <a href="inscription.php" class="deconnexion">Déconnexion</a>
           <div class="filter-buttons">
-            <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
-            <button class="filter-btn buttons-all politique" data-tag="Politique">Politique</button>
-            <button class="filter-btn buttons-all musique" data-tag="Musique">Musique</button>
-            <button class="filter-btn buttons-all divertissement" data-tag="Divertissement">Divertissement</button>
-            <button class="filter-btn buttons-all cinema" data-tag="Cinéma">Cinéma</button>
-            <button class="filter-btn buttons-all voyage" data-tag="Voyage">Voyage</button>
-            <button class="filter-btn buttons-all cuisine" data-tag="Cuisine">Cuisine</button>
-            <button class="filter-btn buttons-all art" data-tag="Art">Art</button>
+            <button class="filter-btn buttons-all buttons-noresp sport" data-tag="Sport">Sport</button>
+            <button class="filter-btn buttons-all buttons-noresp politique" data-tag="Politique">Politique</button>
+            <button class="filter-btn buttons-all buttons-noresp musique" data-tag="Musique">Musique</button>
+            <button class="filter-btn buttons-all buttons-noresp divertissement" data-tag="Divertissement">Divertissement</button>
+            <button class="filter-btn buttons-all buttons-noresp cinema" data-tag="Cinéma">Cinéma</button>
+            <button class="filter-btn buttons-all buttons-noresp voyage" data-tag="Voyage">Voyage</button>
+            <button class="filter-btn buttons-all buttons-noresp cuisine" data-tag="Cuisine">Cuisine</button>
+            <button class="filter-btn buttons-all buttons-noresp art" data-tag="Art">Art</button>
           </div>
-          <button class="reset-filter resetButton">Reset</button>
+          <button class="reset-filter resetButton noResp">Reset</button>
       </div>
       
     </main>

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <?php
@@ -17,15 +18,14 @@
         $user_id=  $_SESSION['user_id'];
     ?>
       <div class='overlay'></div>
-      <button class='button-menu'>Menu</button>
+      <button class='button-menu profil-page'>Menu</button>
       <header class="header nav-profil">
-        <a href="#" class="nav-button"><img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-resp"></a>
         <div class="nav-bar profil">
           <a href="index.php" class="nav">Home</a>
           <a href="" class="nav">Bookmarks</a>
           <a href="profil.php" class="nav">Profil</a>
-          <a href="" class="nav">Explore</a>
-          <a href="" class="nav">Settings </a>
+          <a href="recherche.php" class="nav">Explore</a>
+          <a href="settings.php" class="nav">Settings</a>
         </div> 
         <button id="myBtn" class="btn-modal">Tueets</button>
 
@@ -50,10 +50,7 @@
                 <option value="Cuisine" class="cuisine">Cuisine</option>
                 <option value="Art" class="art">Art</option>
               </select>
-              <label for="image_tweet" class="custom-file-upload">
-                  <img src="./images/input-media.png" alt="Uploader une image" class="input-media">
-              </label>
-              <input type="file" accept="image/png, image/jpeg, image/gif" name="image_tweet" id="image_tweet" style="display:none;">
+              <input type="file" accept="image/png, image/jpeg, image/gif" name="image_tweet" id="image_tweet" style="">
               <input type="submit" value="Tuitts" class="tuitts-modal">
             </form>
           </div>
@@ -114,15 +111,14 @@
               echo '</div>';
               echo '</div>';
             }
+            
             if(isset($_GET['id_tweet'])){
               $tweet_id = $_GET['id_tweet'];
               //var_dump($tweet_id);
             }
             //var_dump($tweet_id);
           ?>
-          <script>
-            var tweet_id = <?php echo $tweet_id;?>;
-          </script> 
+
           <div id="confirm-modal-delete">
             <div class="confirm-modal-content">
               <p class="confirm-quest">Voulez-vous vraiment supprimer ce tweet ?</p>
@@ -151,5 +147,20 @@
       
     </main>
 <script src="app.js"></script>
+<?php if(isset($tweet_id)) { ?>
+<script>
+    let tweet_id = <?php echo $tweet_id; ?>;
+    let confirmModalDelete = document.getElementById("confirm-modal-delete");
+    let confirmDeleteTweet = document.getElementById("cancel-modal-tweet");
+
+    if (tweet_id) {
+      confirmModalDelete.style.display = "block";
+    }
+
+    confirmDeleteTweet.onclick = function(){
+      confirmModalDelete.style.display = "none";
+    }
+  </script> 
+<?php } ?>
 </body>
 </html>

@@ -1,6 +1,7 @@
 .header{
-    margin-left: 15%;
+    margin-left: 10%;
     position: fixed;
+    z-index: 2;
 }
 .profil{
     background-color: rgb(255, 255, 255);
@@ -33,7 +34,13 @@
     display: none;
 }
 
-@media all and (max-device-width:1200px){
+@media screen and (max-width:1200px){
+
+    header {
+        top: 0;
+        left: 0;
+    }
+
     .profil{
         display: none;
     }
@@ -48,6 +55,7 @@
     .button-menu{
         display: block;
         position: absolute;
+        top: 133px;
         margin-left: 1%;
         border-radius: 50px;
         font-size: x-large;
@@ -55,6 +63,11 @@
         background-color: #EDEEC9;
         border-color: #EDEEC9;
         font-weight: 700;
+        z-index: 2;
+    }
+    .button-menu.profil-page{
+        top: 12px;
+        position: sticky;
     }
     
   }

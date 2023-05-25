@@ -7,8 +7,12 @@
 @import url(./components/type.css);
 @import url(./components/profil.css);
 @import url(./components/settings.css);
+@import url(./components/recherche.css);
 
-
+* {
+ /*outline: 1px solid red;*/
+  box-sizing: border-box;
+}
 
 a{
     color: rgb(0, 0, 0);
@@ -23,7 +27,6 @@ a{
     background-color: var(--background-clair);
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
   }
   textarea{
     border-color: rgb(222, 182, 247);
@@ -70,5 +73,13 @@ a{
     --violet-lotus: rgb(171, 86, 162);
     --background-dark: black;
     --background-clair: white;
-    
+  }
+
+  @media screen and (max-width: 1200px) {
+    main {
+      margin: 0;
+    }
+    .logo-lotus{
+      width: 10%;
+    }
   }

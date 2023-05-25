@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 <?php
@@ -16,9 +17,6 @@ session_start();
 //var_dump($_SESSION['user_photo']);
 ?>
 <div>
-<script>
-    var session = <?php echo $_SESSION;?>
-  </script>
 <!-- Je vérifie si l'utilisateur est connecté et affiche le modal lui demandant de se connecter au cas où il ne l'est pas -->
   <?php
       if(isset($_SESSION) && !empty($_SESSION)){
@@ -47,11 +45,10 @@ session_start();
             
 <!-- J'affiche ici la barre de navigation -->
             <div class="nav-bar">
-                <!--<img src="./images/Twitter-LogoPNG1.png" alt="logo-twitter" class="logo logo-cache">-->
                 <a href="#" class="nav">Home</a>
                 <a href="" class="nav">Bookmarks</a>
                 <a href="profil.php" class="nav">Profil</a>
-                <a href="" class="nav">Explore</a>
+                <a href="recherche.php" class="nav">Explore</a>
                 <a href="settings.php" class="nav">Settings </a> 
             </div> 
 <!-- J'affiche le modal qui est géré après avec du JavaScript -->
@@ -101,7 +98,7 @@ session_start();
             <main>
 <!-- Ici on a le form pour l'espace de tweet principal -->
             <div class="center center-respo">
-              <form action="" class="form-tweet" method="post" enctype="multipart/form-data">
+              <form action="" class="form-tweet" method="post" id="form-principal" enctype="multipart/form-data">
                 <textarea name="tweet" id="message" cols="68" rows="10" placeholder="Composer..." class="text_tweet monTweet" required></textarea>
                 <select name="genre" id="nav_type" class="type_tweet" required>
                   <option value="">Type</option>
@@ -212,5 +209,30 @@ session_start();
             </main>
       </div>
     <script src="app.js"></script>
+    <script>
+      var message = document.getElementById("message");
+      var select = document.getElementById("nav_type");
+      var form = document.getElementById("form-principal");
+
+      if(localStorage.getItem("tag")){
+        select.value = localStorage.getItem("tag");
+      }
+
+      if(localStorage.getItem("texte")){
+        message.value = localStorage.getItem("texte");
+      }
+
+      select.addEventListener("input", function(){
+        localStorage.setItem("tag", select.value);
+      });
+
+      message.addEventListener("input", function(){
+        localStorage.setItem("texte", message.value);
+      })
+
+      form.addEventListener("submit", function(event){
+        localStorage.clear();
+      })
+    </script>
 </body>
 </html>

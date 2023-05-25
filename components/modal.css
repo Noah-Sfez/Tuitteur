@@ -45,7 +45,7 @@
       border-color: white;
       margin-top: 2%;
       border-radius: 10px;
-      margin-left: 20px;
+      width: 100%;
     }
     .img-profil-modal{
       width: 60px;
@@ -205,7 +205,7 @@
   }
   
   
-  @media all and (max-device-width:1200px){
+  @media screen and (max-width:1200px){
     .btn-modal{
       display: none;
     }
@@ -215,6 +215,12 @@
     }
     .confirm-modal-content{
       width: 50%;
+    }
+    .modal-content{
+      width: 80%;
+    }
+    .tuitts-modal{
+      margin-left: 0;
     }
   
   }

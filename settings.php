@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Prompt:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <?php
@@ -22,8 +23,8 @@
           <a href="index.php" class="nav">Home</a>
           <a href="" class="nav">Bookmarks</a>
           <a href="profil.php" class="nav">Profil</a>
-          <a href="" class="nav">Explore</a>
-          <a href="" class="nav">Settings </a>
+          <a href="recherche.php" class="nav">Explore</a>
+          <a href="#" class="nav">Settings </a>
         </div> 
         
         <div class="profil">

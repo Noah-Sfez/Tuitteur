@@ -15,6 +15,11 @@ buttons.forEach(Element => {
     })
   })
 })
+
+
+
+
+
 // Sélectionnez le bouton de réinitialisation
 const resetButtonResp = document.getElementsByClassName("resetButton");
 const resetButton = document.getElementsByClassName("resetButton noResp");
@@ -36,12 +41,16 @@ resetButton[0].addEventListener("click", () => {
 
 const connect = document.querySelector('.modal-connect');
 
-window.addEventListener('scroll', ()=>{
-  if(window.scrollY > 500){
-    console.log('scroll');
-    connect.classList.add('scroll');
-  }
-});
+if(connect != null) {
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > 500){
+      console.log('scroll');
+      connect.classList.add('scroll');
+    }
+  });
+}
+
+
 
 
 
@@ -85,7 +94,6 @@ sport[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#E38181";
   poster.style.borderColor = "#E38181";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#E38181";
 }); 
 
 politiqueResp[0].addEventListener("click", function() {
@@ -106,9 +114,6 @@ politique[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#AC9F9F";
   poster.style.borderColor = "#AC9F9F";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#AC9F9F";
-  deconnexion.style.borderColor = "#AC9F9F";
-  deconnexion.style.color = "white";
 });
 
 musiqueResp[0].addEventListener("click", function() {
@@ -129,10 +134,6 @@ musique[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#BE86B9";
   poster.style.borderColor = "#BE86B9";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#BE86B9";
-  deconnexion.style.borderColor = "#BE86B9";
-  deconnexion.style.color = "white";
-  
 });
 
 divertissementResp[0].addEventListener("click", function() {
@@ -153,26 +154,16 @@ divertissement[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#CFD492";
   poster.style.borderColor = "#CFD492";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#CFD492";
-  deconnexion.style.borderColor = "#CFD492";
-  deconnexion.style.color = "white";
   
 });
 
 cinemaResp[0].addEventListener("click", function() {
-  btn.style.backgroundColor = "#383638";
-  btn.style.borderColor = "#383638";
-  btn.style.color = "white";
   typeTweet.style.backgroundColor = "#383638";
   typeTweet.style.borderColor = "#383638";
   typeTweet.style.color = "white";
   poster.style.backgroundColor = "#383638";
   poster.style.borderColor = "#383638";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#383638";
-  deconnexion.style.borderColor = "#383638";
-  deconnexion.style.color = "white";
-  
 });
 cinema[0].addEventListener("click", function() {
   btn.style.backgroundColor = "#383638";
@@ -184,9 +175,6 @@ cinema[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#383638";
   poster.style.borderColor = "#383638";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#383638";
-  deconnexion.style.borderColor = "#383638";
-  deconnexion.style.color = "white";
   
 });
 
@@ -208,10 +196,6 @@ voyage[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#99D89C";
   poster.style.borderColor = "#99D89C";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#99D89C";
-  deconnexion.style.borderColor = "#99D89C";
-  deconnexion.style.color = "white";
-  
 });
 
 cuisineResp[0].addEventListener("click", function() {
@@ -232,10 +216,6 @@ cuisine[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#999FD4";
   poster.style.borderColor = "#999FD4";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#999FD4";
-  deconnexion.style.borderColor = "#999FD4";
-  deconnexion.style.color = "white";
-  
 });
 
 artResp[0].addEventListener("click", function() {
@@ -256,10 +236,6 @@ art[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#DEACE2";
   poster.style.borderColor = "#DEACE2";
   poster.style.color = "white";
-  deconnexion.style.backgroundColor = "#DEACE2";
-  deconnexion.style.borderColor = "#DEACE2";
-  deconnexion.style.color = "white";
-  
 });
 
 resetButtonResp[0].addEventListener("click", function() {
@@ -280,16 +256,7 @@ resetButton[0].addEventListener("click", function() {
   poster.style.backgroundColor = "#edeec9";
   poster.style.borderColor = "#edeec9";
   poster.style.color = "black";
-  deconnexion.style.backgroundColor = "#edeec9";
-  deconnexion.style.borderColor = "#edeec9";
-  deconnexion.style.color = "black";
-  
 });
-
-
-
-
-
 
 var modal = document.getElementById("myModal");
 
@@ -302,7 +269,6 @@ const overlay = document.querySelector('.overlay');
 navButton.addEventListener('click', function(){
   navBar.classList.toggle('active');
   overlay.classList.toggle('show');
-  poster.style.display = (poster.style.display === 'none') ? 'block' : 'none';
 })
 
 btn.onclick = function() {
@@ -326,15 +292,5 @@ window.onclick = function(event) {
 
 
 
-var confirmModalDelete = document.getElementById("confirm-modal-delete");
-var confirmDeleteTweet = document.getElementById("cancel-modal-tweet");
-
-if (tweet_id) {
-  confirmModalDelete.style.display = "block";
-}
-
-confirmDeleteTweet.onclick = function(){
-  confirmModalDelete.style.display = "none";
-}
 
 

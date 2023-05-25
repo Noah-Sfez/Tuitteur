@@ -18,6 +18,7 @@
     border-radius: 20px;
     padding: 2%;
     color: white;
+    width: 100%;
   }
   .other-tweet{
     font-size: large;
@@ -43,12 +44,11 @@
     font-family: 'Prompt', sans-serif;
   }
   .tweet_content{
-    width: 500px;
+    width: 493px;
     gap: 30px;
     display: flex;
     flex-direction: column;
     padding: 2%;
-    margin-right: 22px;
     background-color: rgb(255, 197, 248);
     margin-top: 2%;
     border-radius: 20px;
@@ -119,6 +119,7 @@
   .text_tweet{
     display: flex;
     justify-content: center;
+    width: 100%;
   }
   
   .type_response{
@@ -191,9 +192,9 @@
     margin-left: 25%;
     border-radius: 5px;
   }
-  @media all and (max-device-width:1200px){
+  @media screen and (max-width:1200px){
     .center{
-      width: 700px;
+      width: 100%;
       margin-left: 0;
     }
     .pseudo_tweet{
@@ -209,10 +210,11 @@
       font-size: large;
     }
     .tweet_content{
-      width: 675px;
+      width: 100%;
     }
     .poster{
       font-size: x-large;
+      margin-left: auto;
     }
     .type_tweet{
       font-size: x-large;
