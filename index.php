@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@ session_start();
 <!-- Je vérifie si l'utilisateur est connecté et affiche le modal lui demandant de se connecter au cas où il ne l'est pas -->
   <?php
       if(isset($_SESSION) && !empty($_SESSION)){
-        echo "<div class='bienvenue'><img src='./images/lotus-symbol.png' class='logo-lotus'>" . "<h2 class='maison'>Bonjour " . $_SESSION['pseudo'] . " , bienvenue sur Lotus !</h2>"."<img src='./images/lotus-symbol.png' class='logo-lotus'></div>
+        echo "<div class='bienvenue'><img src='./images/lotus-symbol.png' alt='logo-lotus' class='logo-lotus'>" . "<h2 class='maison'>Bonjour " . $_SESSION['pseudo'] . " , bienvenue sur Lotus !</h2>"."<img src='./images/lotus-symbol.png' alt='logo-lotus' class='logo-lotus'></div>
         <a href='inscription.php' class='deconnexion-responsive'>Déconnexion</a>
         <div class='overlay'></div>
         <button class='button-menu'>Menu</button>";
@@ -40,17 +40,17 @@ session_start();
     };
       ?>
 </div>
-<div class="space-top">
+      <div class="space-top">
         <header class="header">
             
 <!-- J'affiche ici la barre de navigation -->
-            <div class="nav-bar">
+            <nav class="nav-bar">
                 <a href="#" class="nav">Home</a>
                 <a href="" class="nav">Bookmarks</a>
                 <a href="profil.php" class="nav">Profil</a>
                 <a href="recherche.php" class="nav">Explore</a>
                 <a href="settings.php" class="nav">Settings </a> 
-            </div> 
+            </nav> 
 <!-- J'affiche le modal qui est géré après avec du JavaScript -->
             <button id="myBtn" class="btn-modal">Composer</button>
             <div id="myModal" class="modal">
@@ -62,9 +62,9 @@ session_start();
                 ?>
               </div>
 <!-- Ici on retrouve le form qui est dans le modal pour gérer le post des tweets -->
-                <form action="" method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
                   <textarea name="tweet" id="messagemodal" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
-                  <select name="genre" id="" class="type_tweet" required>
+                  <select name="genre" class="type_tweet" required>
                     <option value="">Type</option>
                     <option value="Sport" class="sport">Sport</option>
                     <option value="Politique" class="politique">Politique</option>
@@ -75,7 +75,7 @@ session_start();
                     <option value="Cuisine" class="cuisine">Cuisine</option>
                     <option value="Art" class="art">Art</option>
                   </select>
-                  <input type="file" accept="image/png, image/jpeg image/gif" name="image_tweet" class="media" id="image_tweet" style="">
+                  <input type="file" accept=".png, .jpeg, .gif" name="image_tweet" class="media">
                   <input type="submit" value="Tuitts" class="tuitts-modal" id="bouton">
                 </form>
               </div>
@@ -95,10 +95,10 @@ session_start();
               </div>
             </div>
         </header>
-            <main>
+          <main>
 <!-- Ici on a le form pour l'espace de tweet principal -->
             <div class="center center-respo">
-              <form action="" class="form-tweet" method="post" id="form-principal" enctype="multipart/form-data">
+              <form class="form-tweet" method="post" id="form-principal" enctype="multipart/form-data">
                 <textarea name="tweet" id="message" cols="68" rows="10" placeholder="Composer..." class="text_tweet monTweet" required></textarea>
                 <select name="genre" id="nav_type" class="type_tweet" required>
                   <option value="">Type</option>
@@ -111,7 +111,7 @@ session_start();
                   <option value="Cuisine" class="cuisine">Cuisine</option>
                   <option value="Art" class="art">Art</option>
                 </select>
-                <input type="file" accept="image/png, image/jpeg image/gif" name="image_tweet" class="media" id="image_tweet" style="">
+                <input type="file" accept=".png, .jpeg, .gif" name="image_tweet" class="media">
                 <input type="submit" id="poster" value="Tuitts" class="poster">
               </form>
               <div class="lost">
@@ -182,7 +182,7 @@ session_start();
                             <div class="date_supprimer">';
                   echo        $tweet['date_heure_message'] . '<br>';
                   echo     '</div>
-                            <div class="type_response" id="type_resp">';
+                            <div class="type_response">';
                   echo        $tweet['type'];
                   echo      '</div>
                           </div>
@@ -206,14 +206,17 @@ session_start();
               </div>
               <button class="reset-filter resetButton noResp">Reset</button>
             </div>
-            </main>
+          </main>
       </div>
     <script src="app.js"></script>
     <script>
+
+/* Ici je fais le localstorage uniquement pour la page d'accueil */
       var message = document.getElementById("message");
       var select = document.getElementById("nav_type");
       var form = document.getElementById("form-principal");
 
+/* Je récupère les valeurs entrées dans le form, donc le message ainsi que le tag sélectionné */
       if(localStorage.getItem("tag")){
         select.value = localStorage.getItem("tag");
       }
@@ -221,7 +224,7 @@ session_start();
       if(localStorage.getItem("texte")){
         message.value = localStorage.getItem("texte");
       }
-
+/* Je remets les valeurs stockées dans le localstorage */
       select.addEventListener("input", function(){
         localStorage.setItem("tag", select.value);
       });
@@ -230,6 +233,7 @@ session_start();
         localStorage.setItem("texte", message.value);
       })
 
+/* Je vide le localstorage une fois que le form a été envoyé */
       form.addEventListener("submit", function(event){
         localStorage.clear();
       })

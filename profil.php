@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <title>Profil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,23 +12,25 @@
 <body>
     <?php
         $pdo = new PDO('mysql:host=localhost;dbname=testtwitter','root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-        //var_dump($pdo);
+//var_dump($pdo);
         session_start();
+// Je génère une image aléatoirement qui se placera au niveau des photos de profil ainsi que de la bannière présente donc sur les pages profils des utilisateurs 
         $random_user = $pdo->query('SELECT id_users, user_photo, pseudo, prenom, nom FROM users ORDER BY RAND() LIMIT 1')->fetch(PDO::FETCH_ASSOC);
         $user_id=  $_SESSION['user_id'];
     ?>
+<!-- Je mets comme un filtre pour foncer l'écran -->
       <div class='overlay'></div>
       <button class='button-menu profil-page'>Menu</button>
       <header class="header nav-profil">
-        <div class="nav-bar profil">
+        <nav class="nav-bar profil">
           <a href="index.php" class="nav">Home</a>
           <a href="" class="nav">Bookmarks</a>
           <a href="profil.php" class="nav">Profil</a>
           <a href="recherche.php" class="nav">Explore</a>
           <a href="settings.php" class="nav">Settings</a>
-        </div> 
+        </nav> 
+<!-- On retrouve le bouton flottant avec le modal qui est déjà présent dans la page d'accueil -->
         <button id="myBtn" class="btn-modal">Tueets</button>
-
         <div id="myModal" class="modal">
           <div class="modal-content">
           <span class="close">&times;</span>
@@ -37,9 +39,11 @@
               $i = $pdo->query('SELECT * FROM users');
               ?>
             </div>
-            <form action="" method="post">
-              <textarea name="tweet" id="" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
-              <select name="genre" id="" class="type_tweet" required>
+
+<!-- On a ici le form du modal -->
+            <form method="post">
+              <textarea name="tweet" cols="60" rows="7" class="modal-tweet monTweet" placeholder="What's happening ?" required></textarea>
+              <select name="genre" class="type_tweet" required>
               <option value="">Type</option>
                 <option value="Sport" class="sport">Sport</option>
                 <option value="Politique" class="politique">Politique</option>
@@ -55,6 +59,8 @@
             </form>
           </div>
         </div>
+
+<!-- en bas on retrouve en petit la photo de l'utilisateur ainsi que son pseudo, prénom et nom -->
         <div class="profil">
           <div class="img-profil">
             <img src="<?php echo $random_user['user_photo']; ?>" alt="" class="img-profil">
@@ -67,6 +73,7 @@
       </header>
     <main class="main-profil">
       <div class="head-profil">
+<!-- Ici on a le milieu de la page avec la bannière de l'utilisateur qui est donc créé aléatoirement ainsi qu'avec sa photo de profil et son pseudo, prénom et nom -->
         <div class="bio">
           <img src="<?php echo $random_user['user_photo']; ?>" alt="" class="banniere-profil">
           <div class="head">
@@ -75,6 +82,7 @@
             <p class="head-pseudo">@<?php echo $_SESSION['pseudo']; ?></p>
           </div>
         </div>
+<!-- Ici on retrouve les boutons de filtre de tag qui se place au dessus des posts en format mobile mais qui sont cachés en format ordinateur-->
         <div class="lost">
           <div class="filter-buttons">
             <button class="filter-btn buttons-all sport" data-tag="Sport">Sport</button>
@@ -88,6 +96,7 @@
             <button class="reset-filter resetButton">Reset</button>
           </div>
         </div>
+<!-- Ici on affiche uniquement les tweets de l'utilisateur connecté. On retrouve à chaque fois le tag du tweet, ainsi que l'heure à laquelle il a été tweeté -->
         <div class="profil-tweet">
           <?php
             $rqt= "SELECT * FROM tweet WHERE id_users=$user_id ORDER BY date_heure_message DESC";
@@ -104,32 +113,34 @@
               echo '</div>';
               echo '<div class="date_supprimer">';
               echo $row['date_heure_message'] . '<br>';
-              echo '<a href="?id_tweet=' . $row['id_tweet'] . '"><img src="./images/poubelle.png" alt="Supprimer" id="supp" class="poubelle"></a><br><br>';
+              echo '<a href="?id_tweet=' . $row['id_tweet'] . '"><img src="./images/poubelle.png" alt="Supprimer" class="poubelle"></a><br><br>';
               echo '<div class="type_response">';
               echo $row['type'];
               echo '</div>';
               echo '</div>';
               echo '</div>';
             }
-            
+// Ici si l'utilisateur décide de supprimer le tweet, alors grâce à la balise <a> on envoie l'id du tweet dans l'url et on le récupère pour le stocker dans la variable $tweet_id 
             if(isset($_GET['id_tweet'])){
               $tweet_id = $_GET['id_tweet'];
               //var_dump($tweet_id);
             }
             //var_dump($tweet_id);
           ?>
-
+<!-- Ici on retrouve le modale de confirmation pour supprimer le tweet sélectionné -->
           <div id="confirm-modal-delete">
             <div class="confirm-modal-content">
               <p class="confirm-quest">Voulez-vous vraiment supprimer ce tweet ?</p>
                 <div class="button-modal-delete">
                   <a href="#" id="cancel-modal-tweet">Annuler</a>
+<!-- Si l'utilisateur décide de supprimer le tweet, alors on redirige vers une autre page php avec dans l'url avec l'id du tweet que je souhaite supprimer -->
                   <?php echo '<a href="delete.php?supprimer='. $tweet_id . '" class="confirm-delete-tweet">Supprimer</a>'; ?>
                 </div>
             </div>
           </div>
         </div>
       </div>
+<!-- Ici on retrouve les boutons de tag qui n'apparaissent qu'en format ordinateur -->
       <div class="last-profil">
         <a href="inscription.php" class="deconnexion">Déconnexion</a>
         <div class="filter-buttons">
@@ -147,16 +158,20 @@
       
     </main>
 <script src="app.js"></script>
+<!-- Ici on ouvre une condition en php pour dire que si la variable php $tweet_id n'est pas vide, alors on execute le code Javascript ci-dessous -->
 <?php if(isset($tweet_id)) { ?>
 <script>
+
+/* Je déclare mes variables en Javascript et je dis que la variable JS tweet_id est égale à celle en php */
     let tweet_id = <?php echo $tweet_id; ?>;
     let confirmModalDelete = document.getElementById("confirm-modal-delete");
     let confirmDeleteTweet = document.getElementById("cancel-modal-tweet");
 
+/* Et donc en après cette fois ci en Javascript, je dis que si tweet_id n'est pas vide, alors on affiche le modal */
     if (tweet_id) {
       confirmModalDelete.style.display = "block";
     }
-
+/* Et donc ici je permets de fermer le modal grâce à un bouton prévu à cette effet */ 
     confirmDeleteTweet.onclick = function(){
       confirmModalDelete.style.display = "none";
     }

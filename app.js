@@ -1,3 +1,5 @@
+//Je fais ici le système de filtre de tag, notamment grâce à l'élément data-tag présent sur mes boutons de tag 
+
 const tweets = document.querySelectorAll(".tweet_content");
 const buttons = document.querySelectorAll(".buttons-all");
 console.log(tweets);
@@ -17,30 +19,26 @@ buttons.forEach(Element => {
 })
 
 
-
-
-
-// Sélectionnez le bouton de réinitialisation
+// Ensuite je fais donc le bouton reset, qui consiste à juste afficher tous les tweets 
 const resetButtonResp = document.getElementsByClassName("resetButton");
 const resetButton = document.getElementsByClassName("resetButton noResp");
 
-// Ajoutez un gestionnaire d'événements au bouton de réinitialisation
+
 resetButtonResp[0].addEventListener("click", () => {
-  // Affichez tous les tweets en rétablissant leur style d'affichage initial
+
   tweets.forEach(tweet => {
     tweet.style.display = "block";
   });
 });
-
+// Je le fais deux fois pour mes deux boutons de reset qui m'aident notamment pour le responsive
 resetButton[0].addEventListener("click", () => {
-  // Affichez tous les tweets en rétablissant leur style d'affichage initial
   tweets.forEach(tweet => {
     tweet.style.display = "block";
   });
 });
 
 const connect = document.querySelector('.modal-connect');
-
+// Ici je permets de mettre une condition où si le modal de connexion existe, alors je fais fonctionner mon code qui fais apparaître le modal au scroll de l'utilisateur 
 if(connect != null) {
   window.addEventListener('scroll', ()=>{
     if(window.scrollY > 500){
@@ -50,10 +48,8 @@ if(connect != null) {
   });
 }
 
-
-
-
-
+// Ici on a une grosse partie de code qui permet de changer les éléments de l'interface en fonction de la couleur du tag choisie
+// Par exemple si vous appuyez sur sport, vous aurez le bouton du modal, le sélecteur des types ainsi que le bouton pour poster les tweets qui se mettront en rouge
 const sportResp = document.getElementsByClassName("buttons-all sport");
 const sport = document.getElementsByClassName("buttons-noresp sport");
 const politiqueResp = document.getElementsByClassName("buttons-all politique");
@@ -258,10 +254,8 @@ resetButton[0].addEventListener("click", function() {
   poster.style.color = "black";
 });
 
-var modal = document.getElementById("myModal");
-
-var span = document.getElementsByClassName("close")[0];
-
+// Ici on retrouve le code de la side nav qui rajoute une classe à ma nav bar pour la faire glisser de la gauche vers la droite
+// Et pendant ce temps on a aussi comme un filtre noir qui va apparaître pour foncer l'arrière plan
 const navButton = document.querySelector('.button-menu');
 const navBar = document.querySelector('.nav-bar');
 const overlay = document.querySelector('.overlay');
@@ -271,17 +265,21 @@ navButton.addEventListener('click', function(){
   overlay.classList.toggle('show');
 })
 
+// Ici on retrouve simplement le code pour ouvrir et fermer le modal 
+var modal = document.getElementById("myModal");
+var span = document.getElementsByClassName("close")[0];
+
 btn.onclick = function() {
   modal.style.display = "block";
   poster.style.display = "none";
 }
-
 
 span.onclick = function() {
   modal.style.display = "none";
   poster.style.display = "block";
 }
 
+// Ici je permet à l'utilisateur de pouvoir fermer le modal seulement en appuyant en dehors de celui-ci
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";

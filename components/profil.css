@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     min-height: 1340px;
-    max-height: auto;
     margin-left: 2%;
 }
 .head-img{

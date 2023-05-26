@@ -13,9 +13,13 @@
     $pdo = new PDO('mysql:host=localhost;dbname=testtwitter','root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
     //var_dump($pdo);
     session_start();
+// Je récupère donc 'id qui était présent dans l'url 
     if(isset($_GET['supprimer'])){
+// Je mets cet id dans une variable
         $supp_tweet_id = $_GET['supprimer'];
+// Et je supprime le tweet de ma table tweet grâce à son id
         $pdo->exec("DELETE FROM tweet WHERE id_tweet = $supp_tweet_id");
+// Et je redirige directement l'utilisateur vers sa page de profil où il a supprimé le tweet ce qui fait qu'il pense avoir toujours été sur la page profil.php
         header("Location: profil.php");
     } 
     ?>

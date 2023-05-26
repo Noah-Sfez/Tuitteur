@@ -37,9 +37,7 @@
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5);
     transition: 0.5s;
 }
-.deconnexion:hover{
-    scale: 120%;
-}
+
 .deconnexion-responsive{
     display: none;
 }
@@ -75,7 +73,7 @@
     transition: 0.5s;
 }
 .reset-filter:hover{
-    scale: 120%;
+    transform: scale(1.2);
 }
 
 @media screen and (max-width:1200px){

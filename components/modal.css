@@ -127,7 +127,7 @@
   }
   .inscrip-modal-connect:hover{
     background-color: #bcbe99;
-    scale: 110%;
+    transform: scale(1.1);
   }
   .connex-modal-connect{
     background-color: #edeec9;
@@ -140,7 +140,7 @@
   }
   .connex-modal-connect:hover{
     background-color: #bcbe99;
-    scale: 110%;
+    transform: scale(1.1);
   }
   
   #confirm-modal-delete{
@@ -184,7 +184,7 @@
   }
   #cancel-modal-tweet:hover{
     background-color: rgb(237, 158, 245);
-    scale: 110%;
+    transform: scale(1.1);
   }
   .button-modal-delete{
     display: flex;
@@ -201,17 +201,13 @@
   }
   .confirm-delete-tweet:hover{
     background-color: rgb(237, 158, 245);
-    scale: 110%;
+    transform: scale(1.1);
   }
   
   
-  @media screen and (max-width:1200px){
+  @media screen and (max-width:1350px){
     .btn-modal{
       display: none;
-    }
-    .modal-content-connect{
-      width: 50%;
-      height: 15%;
     }
     .confirm-modal-content{
       width: 50%;
@@ -222,5 +218,33 @@
     .tuitts-modal{
       margin-left: 0;
     }
-  
+    .modal-content-connect{
+      width: 60%;
+      height: 25%;
+    }
+  }
+
+  @media screen and (max-width:660px){
+    .title-modal-connect{
+      font-size: large;
+    }
+    .button-modal-connect{
+      display: flex;
+      margin-top: 0;
+      width: 0;
+      margin-right: 70%
+    }
+    .inscrip-modal-connect{
+      margin-left: 0;
+      border-radius: 10px;
+      padding-top: 2%;
+    }
+    .connex-modal-connect{
+      margin-left: 20px;
+      border-radius: 10px;
+    }
+    .modal-content-connect{
+      width: 80%;
+      height: 15%;
+    }
   }

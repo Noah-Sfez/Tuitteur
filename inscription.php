@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
     <title>Inscription</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,88 +33,16 @@ if($_POST){
     $result = $pdo->query("SELECT id_users FROM users WHERE prenom = '$_POST[prenom]' AND nom = '$_POST[nom]' AND mail = '$_POST[mail]'");
     $user = $result->fetch(PDO::FETCH_ASSOC);
     $_SESSION['user_id'] = $user['id_users'];
-?>
-<div class="recap">
-    <h2>Voici le récaptitulatif de vos informations :</h2>
-    <ul>
-        <li>Prenom : <?php echo $_POST['prenom']; ?></li>
-        <li>Nom : <?php echo $_POST['nom']; ?></li>
-        <li>Votre date de naissance est : <?php echo $_POST['birth']?></li>
-        <li>Adresse e-mail : <?php echo $_POST['mail']; ?></li>
-        <li>Mot de passe : <?php echo $_POST['mdp']; ?></li>
-    </ul>
-    <a href="index.php" class="valid">Valider votre compte</a>
-</div>
-<?php
+    header("Location: index.php");
 }else{
 
 ?>
-<!--<div class="formulaire">
-    <h1 class="creation">Créer votre compte</h1>
-    <form action="" method="post" class="formu">
-        <input type="text" name="prenom" placeholder="Votre prénom" required>
-        <br><br>
-        <input type="text" name="nom" placeholder="Votre nom" required>
-        <br><br>
-        <input type="text" name="pseudo" placeholder="Votre pseudo" required>
-        <h4 class="naissance">Date de naissance :</h4>
-        <input type="date" name="birth" required>
-        <br><br>
-        <input type="email" name="mail" placeholder="Votre e-mail" required>
-        <br><br>
-        <input type="password" name="mdp" placeholder="Votre mot de passe" required>
-        <br><br>
-        <input type="submit" value="S'inscrire" class="submit" required>
-    </form>
-    <p class="page-connect">J'ai déjà un compte. <a href="connexion.php">Me connecter</a></p>
-</div>-->
-
-<!--<h1 class="title_background">Lotus</h1>
-<div class="inscrip-back">
-    <div class="p-3 rounded-4">
-        <h2 class="text-white">Créer votre compte</h2>
-        <form method="post">
-        <div class="mb-3 form-floating">
-            <input type="text" name="prenom" id="floatingInput" class="form-control" required>
-            <label class="form-label" for="floatingInput">Prénom :</label>
-        </div>
-        <div class="mb-3 form-floating">
-            <input type="text" name="nom" id="floatingInput" class="form-control"required>
-            <label class="form-label" for="floatingInput">Nom :</label>
-        </div>
-        <div class="mb-3 form-floating">
-            <input type="text" name="pseudo" id="floatingInput" class="form-control" required>
-            <label class="form-label" for="floatingInput">Pseudo :</label>
-        </div>
-        <div class="mb-3 d-flex jutify-content-center flex-column align-items-center">
-            <h3 class="text-white">Votre date de naissance :</h3>
-            <input name="birth" type="date" class="col-6" required>
-        </div>
-        <div class="mb-3 form-floating">
-            <input type="email" class="form-control"  name="mail" id="floatingInput" aria-describedby="emailHelp" required>
-            <label for="exampleInputEmail1" for="floatingInput" class="form-label">Adresse e-mail :</label>
-        </div>
-        <div class="mb-3 form-floating">
-            <input type="password" class="form-control" name="mdp" id="floatingInput" required>
-            <label for="exampleInputPassword1" for="floatingInput" class="form-label">Password :</label>
-        </div>
-        <div class="mb-3 d-flex justify-content-center flex-column align-items-center" style="--bs-btn-padding-y: .105rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-        <button type="submit" class="btn text-bg-light p-3 d-flex col-6 fs-5 justify-content-center ">S'inscrire</button>
-        <div class="d-flex text-white mt-3">
-            <p>J'ai déjà un compte.</p>
-            <a href="connexion.php" class="text-white ms-3">Se connecter</a>
-        </div>
-        </div>
-        </form>
-    </div>
-</div> 
--->
-
+  
 <div class="form_bg">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
-                <form action="" method="post" class="form_horizontal">
+                <form method="post" class="form_horizontal">
                     <div class="form_icon"><i class="fa fa-user"></i></div>
                     <h3 class="title">Inscription</h3>
                     <p><?php echo $error;?></p>
@@ -132,7 +60,7 @@ if($_POST){
                     </div>
                     <div class="form-group">
                         <span class="input-icon"><i class="fa fa-calendar"></i></span>
-                        <input class="form-control" type="date" name="birth" placeholder="" required>
+                        <input class="form-control" type="date" name="birth" required>
                     </div>
                     <div class="form-group">
                         <span class="input-icon"><i class="fa fa-envelope-o"></i></span>
@@ -140,7 +68,7 @@ if($_POST){
                     </div>
                     <div class="form-group">
                         <span class="input-icon"><i class="fa fa-lock"></i></span>
-                        <input class="form-control "type="password" name="mdp" placeholder="password" required>
+                        <input class="form-control" type="password" name="mdp" placeholder="password" required>
                     </div>
 
                     <button class="btn signin" type="submit">login</button>
@@ -154,9 +82,6 @@ if($_POST){
         </div>
     </div>
 </div>
-
-
-
 <?php
 }
 ?>
